@@ -2,24 +2,23 @@ import React, { useEffect } from 'react'
 import { useSelector } from 'react-redux'
 import '../styles/midcontainer.css'
 import { useDispatch } from 'react-redux'
-import { fetchAllTasks } from '../redux/actions'
 import Card from '../Components/Card'
 
 
 export default function MidContainer() {
 
-  const tasks = useSelector(state => state.tasks)
+  // const tasks = useSelector(state => state.tasks)
   const dispatch = useDispatch()
 
 
   useEffect(() => {
-    dispatch(fetchAllTasks())
+    // dispatch(fetchAllTasks())
   }, [dispatch])
 
-  console.log(tasks)
+  // console.log(tasks)
   return (
     <div>
-      {tasks.map(task => (
+      {/* {tasks.map(task => (
         <Card 
           key={task.id}
           name={task.name}
@@ -28,7 +27,7 @@ export default function MidContainer() {
           time={task.time}
           taskObj={task}
         />
-      ))}
+      ))} */}
     </div>
   )
 }
