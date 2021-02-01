@@ -1,10 +1,9 @@
 import React, { useState } from 'react'
 import Rodal from 'rodal'
-
+import TaskForm from './TaskForm';
 import 'rodal/lib/rodal.css';
-import ListForm from './ListForm';
 
-export default function ListModal() {
+export default function TaskModal() {
 
   const [visible, setVisible] = useState(false)
 
@@ -18,16 +17,17 @@ export default function ListModal() {
 
   return (
     <div>
-      <button onClick={show}>Add List</button>
+      <button onClick={show}>Create Task</button>
       <Rodal
         customStyles={{ borderRadius: "20px" }} 
-        height={280}
+        height={550}
+        width={700}
         visible={visible} 
         onClose={hide} 
         animation="zoom" 
         showCloseButton={false}
       >
-        <ListForm />
+        <TaskForm />
       </Rodal>
     </div>
   )

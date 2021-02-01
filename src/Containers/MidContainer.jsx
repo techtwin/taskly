@@ -5,6 +5,7 @@ import { useDispatch } from 'react-redux'
 import Card from '../Components/Card'
 import { fetchTasks } from '../redux/task'
 import ListModal from '../Components/ListModal'
+import TaskModal from '../Components/TaskModal'
 
 const url = "http://localhost:3000/";
 
@@ -26,6 +27,7 @@ export default function MidContainer() {
   return (
     <div className="middleCont">
       <ListModal />
+      <TaskModal />
       {tasks.map(task => (
         <Card 
           key={task.id}
