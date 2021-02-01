@@ -4,6 +4,7 @@ import '../styles/midcontainer.css'
 import { useDispatch } from 'react-redux'
 import Card from '../Components/Card'
 import { fetchTasks } from '../redux/task'
+import ListModal from '../Components/ListModal'
 
 const url = "http://localhost:3000/";
 
@@ -24,13 +25,14 @@ export default function MidContainer() {
   
   console.log("MidContainer userSelector:", tasks)
   return (
-    <div>
+    <div className="middleCont">
       {tasks.map(task => (
         <Card 
           key={task.id}
           taskObj={task}
         />
       ))}
+      <ListModal />
     </div>
   )
 }
