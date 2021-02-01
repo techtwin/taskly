@@ -40,14 +40,17 @@ export default function TaskForm() {
           <option></option>
         </select>
         <h1>Name</h1>
-        <input name="name" value={state.name} onChange={changeHandler} placeholder="Name"></input><br /><br />
+        <input type="text" name="name" value={state.name} onChange={changeHandler} placeholder="Name"></input><br /><br />
         <h1>Date</h1>
         <input type="date" name="date" value={state.date} onChange={changeHandler} placeholder="Date"></input><br /><br />
         <h1>Time</h1>
         <input type="time" name="time" value={state.time} onChange={changeHandler} placeholder="Time"></input><br /><br />
         <h1>Description</h1>
-        <textarea type="description" name="description" value={state.description} onChange={changeHandler} placeholder="Description"></textarea><br /><br />
-        <button style={{ color: "white", backgroundColor: "#F8D57E"}}>Submit</button>
+        <textarea type="text" name="description" value={state.description} onChange={changeHandler} placeholder="Description"></textarea><br /><br />
+        <button style={{
+          color: "white",
+          backgroundColor: "#F8D57E",
+        }}>Submit</button>
       </form>
     </div>
   )

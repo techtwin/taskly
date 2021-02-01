@@ -4,3 +4,11 @@
   grid-column-gap: 0px;
   grid-row-gap: 0px;
 }
+
+.listSubmitBtn:focus {
+  outline: none;
+}
+
+.listSubmitBtn:active {
+  transform: scale(0.8);
+}

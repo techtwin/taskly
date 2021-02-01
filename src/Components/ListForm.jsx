@@ -34,12 +34,22 @@ export default function ListForm() {
 
   return (
     <div className="listForm">
-      <form onSubmit={submitHandler}>
+      <form onSubmit={submitHandler}> 
         <h1>Name</h1>
-        <input name="name" value={state.name} onChange={changeHandler} placeholder="Name"></input><br /><br />
+        <input type="text" name="name" value={state.name} onChange={changeHandler} placeholder="Name"></input><br /><br />
         <h1>Color</h1>
-        <input type="color" name="color" value={state.color} onChange={changeHandler} placeholder="Color"></input><br /><br />
-        <button style={{ color: "white", backgroundColor: "#F8D57E"}}>Submit</button>
+        <input type="color" name="color" value={state.color} onChange={changeHandler} placeholder="Color" style={{ marginLeft: "12px"}}></input><br /><br />
+        <button className="listSubmitBtn" style={{
+          cursor: "pointer",
+          color: "white",
+          backgroundColor: "#F8D57E",
+          borderRadius: "20px",
+          border: "none",
+          marginTop: "10px",
+          padding: "10px",
+          width: "200px",
+          fontSize: "20px",
+        }}>Submit</button>
       </form>
     </div>
   )

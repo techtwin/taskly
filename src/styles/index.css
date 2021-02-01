@@ -29,3 +29,27 @@ h5 {
   margin: calc(2rem - 0.14285714em) 0 1rem;
   padding: 0;
 }
+
+input[type="color"] {
+  outline: none;
+  border: none;
+  border-color: transparent;
+  transform: scale(1.5);
+}
+
+input[type="color"]:focus {
+  outline: none;
+  border: none;
+  border-color: transparent;
+}
+
+input[type="text"] {
+  line-height: 1.21428571em;
+  padding: 0.67857143em 1em;
+  font-size: 1em;
+  background: #fff;
+  border: 1px solid rgba(34, 36, 38, 0.15);
+  color: rgba(0, 0, 0, 0.87);
+  border-radius: 0.28571429rem;
+  box-shadow: 0 0 0 0 transparent inset;
+}
