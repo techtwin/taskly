@@ -8,7 +8,7 @@
   background-color: #f6f7fb93;
   border-radius: 20px;
   width: 50%;
-  height: 400px;
+  height: 500px;
   transform: scale(0.8);
   padding-top: 50px;
   margin-left: 65px;
@@ -24,7 +24,7 @@
 
 .gitmanBtn {
   position: absolute;
-  top: 340px;
+  top: 450px;
   right: 10px;
   transform: scale(0.7);
   cursor: pointer;

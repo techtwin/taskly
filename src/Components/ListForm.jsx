@@ -33,7 +33,7 @@ export default function ListForm() {
   }
 
   return (
-    <>
+    <div className="listForm">
       <form onSubmit={submitHandler}>
         <h1>Name</h1>
         <input name="name" value={state.name} onChange={changeHandler} placeholder="Name"></input><br /><br />
@@ -41,6 +41,6 @@ export default function ListForm() {
         <input type="color" name="color" value={state.color} onChange={changeHandler} placeholder="Color"></input><br /><br />
         <button style={{ color: "white", backgroundColor: "#F8D57E"}}>Submit</button>
       </form>
-    </>
+    </div>
   )
 }

@@ -20,7 +20,7 @@ export default function ListModal() {
     <div>
       <button onClick={show}>Add List</button>
       <Rodal
-        customStyles={{ borderRadius: "20px" }} 
+        customStyles={{ position: "absolute", borderRadius: "20px" }} 
         visible={visible} 
         onClose={hide} 
         animation="zoom" 

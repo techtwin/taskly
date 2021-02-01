@@ -14,3 +14,11 @@
   justify-content: flex-end;
   padding-right: 20px;
 }
+
+.cardBtns button {
+  cursor: pointer;
+}
+
+.cardBtns button:focus {
+  outline: none !important;
+}
