@@ -1,0 +1,16 @@
+.card {
+  background-color: #f6f7fb93;
+  border-radius: 20px;
+  margin-bottom: 15px;
+}
+
+.cardContent {
+  /* padding-top: 5px; */
+  padding-left: 30px;
+}
+
+.cardBtns {
+  display: flex;
+  justify-content: flex-end;
+  padding-right: 20px;
+}
