@@ -3,7 +3,7 @@ import Rodal from 'rodal'
 import TaskForm from './TaskForm';
 import 'rodal/lib/rodal.css';
 
-export default function TaskModal() {
+export default function TaskModal({ lists }) {
 
   const [visible, setVisible] = useState(false)
 
@@ -38,7 +38,7 @@ export default function TaskModal() {
             borderRadius: "20px"
           }} />
         </div>
-        <TaskForm />
+        <TaskForm lists={lists} />
       </Rodal>
     </div>
   )

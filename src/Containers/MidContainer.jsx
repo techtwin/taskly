@@ -4,6 +4,7 @@ import '../styles/midcontainer.css'
 import { useDispatch } from 'react-redux'
 import Card from '../Components/Card'
 import { fetchTasks } from '../redux/task'
+import { fetchLists } from '../redux/list'
 import ListModal from '../Components/ListModal'
 import TaskModal from '../Components/TaskModal'
 
@@ -12,6 +13,7 @@ const url = "http://localhost:3000/";
 export default function MidContainer() {
 
   const tasks = useSelector(({ tasks }) => tasks.tasks)
+  const lists = useSelector(({ lists }) => lists.lists)
   const dispatch = useDispatch()
 
   useEffect(() => {
@@ -22,12 +24,21 @@ export default function MidContainer() {
       console.log(action)
       dispatch(action)
     })
+
+    fetch(`${url}lists`)
+    .then(r => r.json())
+    .then((lists) => {
+      const action = fetchLists(lists)
+      console.log(action)
+      dispatch(action)
+    })
+
   }, [dispatch])
   
   return (
     <div className="middleCont">
       <ListModal />
-      <TaskModal />
+      <TaskModal lists={lists}/>
       {tasks.map(task => (
         <Card 
           key={task.id}

@@ -4,7 +4,7 @@ import { useDispatch } from 'react-redux'
 
 const url = "http://localhost:3000/";
 
-export default function TaskForm() {
+export default function TaskForm({ lists }) {
 
   const [state, setState] = useState({ name: "", description: "", date: "", time: "", list_id: null})
   const dispatch = useDispatch()
@@ -32,11 +32,21 @@ export default function TaskForm() {
     setState({ ...state, [key]: value })
   }
 
+  const options = lists.map(list => {
+    return { key: list.id, text: list.name, value: list.id }
+  })
+
+  const listClickHandler = (e, data) => {
+    console.log("lists click handler:", data.value)
+    setState({ list_id: data.value })
+  }
+
+  console.log(options)
   return (
     <div className="taskForm">
       <form onSubmit={submitHandler}>
         <h1>Choose List</h1>
-        <select>
+        <select name="list_id" onChange={listClickHandler}>
           <option></option>
         </select>
         <h1>Name</h1>
