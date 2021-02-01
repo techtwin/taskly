@@ -23,7 +23,6 @@ export default function MidContainer() {
     })
   }, [dispatch])
   
-  console.log("MidContainer userSelector:", tasks)
   return (
     <div className="middleCont">
       <ListModal />
