@@ -2,3 +2,19 @@
   text-align: center;
   grid-area: 1 / 3 / 6 / 4;
 }
+
+.githubDiv {
+  font-family: Gilroy-Bold;
+  background-color: #f6f7fb93;
+  border-radius: 20px;
+  width: 50%;
+  transform: scale(0.8);
+  padding-top: 50px;
+  margin-left: 65px;
+}
+
+.gitmanBtn {
+  display: inline-block;
+  transform: scale(0.7);
+  cursor: pointer;
+}
