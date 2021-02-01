@@ -33,18 +33,20 @@ export default function MidContainer() {
       dispatch(action)
     })
 
-  }, [dispatch])
+  }, [])
   
   return (
     <div className="middleCont">
       <ListModal />
-      <TaskModal lists={lists}/>
-      {tasks.map(task => (
-        <Card 
-          key={task.id}
-          taskObj={task}
-        />
-      ))}
+      <TaskModal lists={lists} />
+      <div className="cardCont">
+        {tasks.map(task => (
+          <Card 
+            key={task.id}
+            taskObj={task}
+          />
+        ))}
+      </div>
     </div>
   )
 }

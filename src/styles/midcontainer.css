@@ -5,6 +5,12 @@
   grid-row-gap: 0px;
 }
 
+.cardCont {
+  height: 80%;
+  overflow-y: scroll;
+  max-height: 100vh;
+}
+
 .modalSubmitBtn:focus {
   outline: none;
 }
