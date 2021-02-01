@@ -20,7 +20,7 @@ export default function TaskModal() {
       <button onClick={show}>Create Task</button>
       <Rodal
         customStyles={{ borderRadius: "20px", display: "flex" }} 
-        height={700}
+        height={800}
         width={900}
         visible={visible} 
         onClose={hide} 

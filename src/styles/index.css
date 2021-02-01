@@ -43,7 +43,11 @@ input[type="color"]:focus {
   border-color: transparent;
 }
 
-input[type="text"] {
+input[type="text"],
+input[type="date"],
+input[type="time"],
+select,
+textarea {
   line-height: 1.21428571em;
   padding: 0.67857143em 1em;
   font-size: 1em;
