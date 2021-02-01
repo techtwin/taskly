@@ -26,13 +26,13 @@ export default function MidContainer() {
   console.log("MidContainer userSelector:", tasks)
   return (
     <div className="middleCont">
+      <ListModal />
       {tasks.map(task => (
         <Card 
           key={task.id}
           taskObj={task}
         />
       ))}
-      <ListModal />
     </div>
   )
 }

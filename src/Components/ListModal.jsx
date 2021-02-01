@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import Rodal from 'rodal'
 
 import 'rodal/lib/rodal.css';
+import ListForm from './ListForm';
 
 export default function ListModal() {
 
@@ -17,7 +18,7 @@ export default function ListModal() {
 
   return (
     <div>
-      <button onClick={show}>Show</button>
+      <button onClick={show}>Add List</button>
       <Rodal
         customStyles={{ borderRadius: "20px" }} 
         visible={visible} 
@@ -25,7 +26,7 @@ export default function ListModal() {
         animation="zoom" 
         showCloseButton={false}
       >
-        <div>Content</div>
+        <ListForm />
       </Rodal>
     </div>
   )
