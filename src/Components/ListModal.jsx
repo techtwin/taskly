@@ -29,7 +29,7 @@ export default function ListModal() {
         showCloseButton={false}
       >
         <div className="list-img">
-          <img src="./list-img.jpg" alt="list pic" style={{
+          <img src="./List.jpg" alt="list pic" style={{
             objectFit: "contain",
             width: "300px",
             textAlign: "left",

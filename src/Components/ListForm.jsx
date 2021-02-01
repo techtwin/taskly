@@ -39,7 +39,7 @@ export default function ListForm() {
         <input type="text" name="name" value={state.name} onChange={changeHandler} placeholder="Name"></input><br /><br />
         <h1>Color</h1>
         <input type="color" name="color" value={state.color} onChange={changeHandler} placeholder="Color" style={{ marginLeft: "12px"}}></input><br /><br />
-        <button className="listSubmitBtn" style={{
+        <button className="modalSubmitBtn" style={{
           cursor: "pointer",
           color: "white",
           backgroundColor: "#F8D57E",

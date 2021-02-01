@@ -5,10 +5,10 @@
   grid-row-gap: 0px;
 }
 
-.listSubmitBtn:focus {
+.modalSubmitBtn:focus {
   outline: none;
 }
 
-.listSubmitBtn:active {
+.modalSubmitBtn:active {
   transform: scale(0.8);
 }

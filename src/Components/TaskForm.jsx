@@ -47,9 +47,16 @@ export default function TaskForm() {
         <input type="time" name="time" value={state.time} onChange={changeHandler} placeholder="Time"></input><br /><br />
         <h1>Description</h1>
         <textarea type="text" name="description" value={state.description} onChange={changeHandler} placeholder="Description"></textarea><br /><br />
-        <button style={{
+        <button className="modalSubmitBtn" style={{
+          cursor: "pointer",
           color: "white",
           backgroundColor: "#F8D57E",
+          borderRadius: "20px",
+          border: "none",
+          marginTop: "10px",
+          padding: "10px",
+          width: "200px",
+          fontSize: "20px",
         }}>Submit</button>
       </form>
     </div>
