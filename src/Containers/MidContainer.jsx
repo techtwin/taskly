@@ -33,7 +33,7 @@ export default function MidContainer() {
       dispatch(action)
     })
 
-  }, [])
+  }, [dispatch])
   
   return (
     <div className="middleCont">

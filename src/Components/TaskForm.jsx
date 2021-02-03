@@ -7,7 +7,7 @@ const url = "http://localhost:3000/";
 
 export default function TaskForm({ lists }) {
 
-  const [state, setState] = useState({ name: "", description: "", date: "", time: "", list_id: null})
+  const [state, setState] = useState({ name: "", description: "", date: "", time: "", list_id: null })
   const dispatch = useDispatch()
 
   const submitHandler = e => {
