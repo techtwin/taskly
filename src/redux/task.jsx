@@ -6,6 +6,7 @@ const taskSlice = createSlice({
   initialState: { tasks: [] },
   reducers: {
     fetchTasks: (state, action) => {
+      // return [...state, action.payload]
       state.tasks = action.payload
     },
     createTask: (state, action) => {

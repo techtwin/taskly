@@ -1,25 +1,12 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import '../styles/rightnav.css'
 import { useDispatch, useSelector } from 'react-redux'
-import { fetchAllUsers } from '../redux/users'
 import { logOut } from '../redux/user'
 import { Link } from "react-router-dom";
-
-const url = "http://localhost:3000/";
 
 export default function RightNav() {
 
   const currentUser = useSelector(({ currentUser }) => currentUser.currentUser)
-
-  // useEffect(() => {
-  //   fetch(`${url}users`)
-  //     .then(r => r.json())
-  //     .then(users => {
-  //       console.log("Right Nav:", users)
-  //       const action = fetchAllUsers(users)
-  //     dispatch(action)
-  //   })
-  // })
 
   const dispatch = useDispatch()
 
