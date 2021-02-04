@@ -5,10 +5,10 @@ import RightNav from '../Containers/RightNav'
 
 export default function Dashboard() {
   return (
-    <div>
+    <>
       <LeftNav />
       <MidContainer />
       <RightNav />
-    </div>
+    </>
   )
 }
