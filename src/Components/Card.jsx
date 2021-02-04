@@ -1,23 +1,14 @@
 import React from 'react'
 import '../styles/card.css'
-import { deleteTask } from '../redux/task'
+import { deleteCurrentTask } from '../redux/task'
 import { useDispatch } from 'react-redux'
-
-const url = "http://localhost:3000/";
 
 export default function Card({ taskObj }) {
 
   const dispatch = useDispatch()
 
-  const deleteHandler = (taskId) => {
-    fetch(`${url}tasks/${taskId}`, {
-      method: "DELETE",
-      headers: {
-        "Content-Type": "application/json",
-      },
-    })
-    .then(r => r.json())
-    .then(dispatch(deleteTask(taskObj.id)))
+  const deleteHandler = () => {
+    dispatch(deleteCurrentTask(taskObj.id))
   }
 
   return (

@@ -9,7 +9,7 @@ const listSlice = createSlice({
       state.lists = action.payload
     },
     createList: (state, action) => {
-      state.lists = action.payload
+      state.lists = [ ...state.lists, action.payload]
     }
   }
 })

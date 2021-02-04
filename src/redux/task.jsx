@@ -12,15 +12,14 @@ const taskSlice = createSlice({
       state.tasks = [...state.tasks, action.payload]
     },
     deleteTask: (state, action) => {
-      // const newArr = state.tasks
-      // return newArr.filter((task) => task.id !== action.payload)
-      return state.tasks.filter((task) => task.id !== action.payload)
+      const newArr = [...state.tasks]
+      state.tasks = newArr.filter((task) => task.id !== action.payload)
     }
   }
 })
 
 // actions
-export const { fetchTasks, createTask, deleteTask } = taskSlice.actions
+const { fetchTasks, createTask, deleteTask } = taskSlice.actions
 
 export const fetchAllTasks = () => {
   return function (dispatch) {
@@ -48,4 +47,14 @@ export const createNewTask = (task) => {
   }
 }
 
+export const deleteCurrentTask = (taskId) => {
+  return function (dispatch) {
+    fetch(`${url}tasks/${taskId}`, {
+      method: "DELETE"
+    })
+    dispatch(deleteTask(taskId))
+  }
+}
+
+// reducer
 export default taskSlice.reducer
