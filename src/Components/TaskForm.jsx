@@ -1,9 +1,7 @@
 import React, { useState } from 'react'
-import { createTask } from '../redux/task';
+import { createNewTask } from '../redux/task';
 import { useDispatch } from 'react-redux'
 import Select from 'react-select'
-
-const url = "http://localhost:3000/";
 
 export default function TaskForm({ lists }) {
 
@@ -12,19 +10,7 @@ export default function TaskForm({ lists }) {
 
   const submitHandler = e => {
     e.preventDefault()
-    fetch(`${url}tasks`, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json"
-      },
-      body: JSON.stringify(state)
-    })
-      .then(r => r.json())
-      .then(data => {
-        const action = createTask(data)
-        dispatch(action)
-        console.log(data)
-      })
+    dispatch(createNewTask(state))
   }
 
   const changeHandler = e => {

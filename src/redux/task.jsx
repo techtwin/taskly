@@ -30,4 +30,22 @@ export const fetchAllTasks = () => {
   }
 }
 
+export const createNewTask = (task) => {
+  return function (dispatch) {
+    fetch(`${url}tasks`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(task)
+    })
+      .then(r => r.json())
+      .then(data => {
+        const action = createTask(data)
+        dispatch(action)
+        console.log(data)
+      })
+  }
+}
+
 export default taskSlice.reducer
