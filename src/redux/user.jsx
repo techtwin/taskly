@@ -54,4 +54,36 @@ export const login = (userObj) => {
     .catch(console.log)
   }
 }
+
+export const signup = (userObj) => {
+  return function (dispatch) {
+    fetch(`${url}users`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(userObj)
+    })
+      .then(r => r.json())
+      .then(data => {
+        console.log(data)
+        if (data.id) {
+          console.log("successfully created user", data.username)
+          localStorage.setItem("USER_DATA", JSON.stringify(data));
+          const action = signUp(data)
+          dispatch(action)
+        } else {
+          console.log("user sign up failed")
+          window.alert("Please enter a username and password")
+        }
+      })
+    .catch(console.log)
+  }
+}
+
+
+
+
+
+
 export default userSlice.reducer

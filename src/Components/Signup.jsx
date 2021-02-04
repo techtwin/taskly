@@ -1,8 +1,6 @@
 import React, { useState } from 'react'
 import { useDispatch } from 'react-redux'
-import { signUp } from '../redux/user';
-
-const url = "http://localhost:3000/";
+import { signup } from '../redux/user';
 
 export default function Signup() {
 
@@ -17,28 +15,7 @@ export default function Signup() {
 
   const submitHandler = e => {
     e.preventDefault()
-    fetch(`${url}users`, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json"
-      },
-      body: JSON.stringify(state)
-    })
-      .then(r => r.json())
-      .then(data => {
-        console.log(data)
-        if (data.id) {
-          console.log("successfully created user", data.username)
-          localStorage.setItem("USER_DATA", JSON.stringify(data));
-          const action = signUp(data)
-          dispatch(action)
-          setState({ username: "", name: "", password: ""})
-        } else {
-          console.log("user sign up failed")
-          window.alert("Please enter a username and password")
-        }
-      })
-    .catch(console.log)
+    dispatch(signup(state))
   }
   
   return (
