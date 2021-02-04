@@ -14,13 +14,31 @@ const listSlice = createSlice({
   }
 })
 
-export const { fetchLists, createList } = listSlice.actions
+const { fetchLists, createList } = listSlice.actions
 
 export const fetchAllLists = () => {
   return function (dispatch) {
     fetch(`${url}lists`)
     .then(r => r.json())
     .then(data => dispatch(fetchLists(data)))
+  }
+}
+
+export const createNewList = (list) => {
+  return function (dispatch) {
+    fetch(`${url}lists`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(list)
+    })
+      .then(r => r.json())
+      .then(data => {
+        const action = createList(data)
+        dispatch(action)
+        console.log(data)
+      })
   }
 }
 
