@@ -14,7 +14,8 @@ export default function Login() {
     setState({ ...state, [key]: value })
   }
 
-  const submitHandler = () => {
+  const submitHandler = (e) => {
+    e.preventDefault()
     if (state === undefined) {
       const userDataStr = localStorage.getItem("USER_DATA");
       let userDataObj = JSON.parse(userDataStr);
