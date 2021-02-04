@@ -1,11 +1,15 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import '../styles/rightnav.css'
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { logOut } from '../redux/user'
 import { Link } from "react-router-dom";
 
 export default function RightNav() {
 
+  useEffect(() => {
+
+  })
+  
   const dispatch = useDispatch()
 
   const handleSignOut = () => {
