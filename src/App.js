@@ -1,6 +1,3 @@
-import LeftNav from "./Containers/LeftNav";
-import MidContainer from "./Containers/MidContainer";
-import RightNav from "./Containers/RightNav";
 import * as ROUTES from "./routes";
 import { useSelector } from "react-redux";
 import { Switch, Route, Redirect } from "react-router-dom";
@@ -21,9 +18,6 @@ function App() {
       ) : (
         <Redirect to={ROUTES.HOME} />
       )}
-      {/* <LeftNav />
-      <MidContainer />
-      <RightNav /> */}
     </div>
   );
 }
