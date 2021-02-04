@@ -3,12 +3,10 @@ import { useSelector } from 'react-redux'
 import '../styles/midcontainer.css'
 import { useDispatch } from 'react-redux'
 import Card from '../Components/Card'
-import { fetchAllTasks, fetchTasks } from '../redux/task'
-import { fetchAllLists, fetchLists } from '../redux/list'
+import { fetchAllTasks } from '../redux/task'
+import { fetchAllLists } from '../redux/list'
 import ListModal from '../Components/ListModal'
 import TaskModal from '../Components/TaskModal'
-
-const url = "http://localhost:3000/";
 
 export default function MidContainer() {
 
@@ -21,17 +19,19 @@ export default function MidContainer() {
     dispatch(fetchAllLists())
   }, [dispatch])
   
+  const allTasks = tasks.map(task => (
+    <Card 
+      key={task.id}
+      taskObj={task}
+    />
+  ))
+  
   return (
     <div className="middleCont">
       <ListModal />
       <TaskModal lists={lists} />
       <div className="cardCont">
-        {tasks.map(task => (
-          <Card 
-            key={task.id}
-            taskObj={task}
-          />
-        ))}
+        {allTasks}
       </div>
     </div>
   )
