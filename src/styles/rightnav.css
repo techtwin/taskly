@@ -3,6 +3,25 @@
   grid-area: 1 / 3 / 6 / 4;
 }
 
+.accountInfo {
+  margin-top: 40px;
+  /* margin-left: -80px; */
+  display: flex;
+  justify-content: space-between;
+}
+
+.accountInfo h1 {
+  margin-left: 40px;
+}
+
+.userImg {
+  object-fit: contain;
+  transform: scale(0.7);
+  border-radius: 50%;
+  margin-top: -25px;
+  margin-right: 280px;
+}
+
 .githubDiv {
   position: relative;
   background-color: #f6f7fb93;
