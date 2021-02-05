@@ -31,13 +31,12 @@ export default function Card({ taskObj }) {
         <span>{taskObj.date}</span> - <span>{taskObj.time}</span><br /><br />
         <div className="listTypeDiv">
           <h2
-            className="listType"
             style={{ backgroundColor: `${taskObj.list.color}` }}
           >
             {taskObj.list.name}
           </h2>
         </div>
-        <p>{taskObj.description}</p><br />
+        <p style={{ paddingRight: "90px"}}>{taskObj.description}</p><br />
       </div>
     </div>
   )

@@ -3,7 +3,7 @@ import { createNewTask } from '../redux/task';
 import { useDispatch } from 'react-redux'
 import Select from 'react-select'
 
-export default function TaskForm({ lists }) {
+export default function TaskForm({ lists, hide }) {
 
   const [state, setState] = useState({ name: "", description: "", date: "", time: "", list_id: null })
   const dispatch = useDispatch()
@@ -41,7 +41,10 @@ export default function TaskForm({ lists }) {
         <input type="time" name="time" value={state.time} onChange={changeHandler} placeholder="Time"></input><br /><br />
         <h1>Description</h1>
         <textarea type="text" name="description" value={state.description} onChange={changeHandler} placeholder="Description"></textarea><br /><br />
-        <button className="modalSubmitBtn" style={{
+        <button
+          onClick={hide}
+          className="modalSubmitBtn"
+          style={{
           cursor: "pointer",
           color: "white",
           backgroundColor: "#F8D57E",

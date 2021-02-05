@@ -17,7 +17,7 @@ export default function TaskModal({ lists }) {
 
   return (
     <div>
-      <button onClick={show}>Create Task</button>
+      <img className="addTaskBtn" onClick={show} src="./add-task.png" alt=""/>
       <Rodal
         customStyles={{ borderRadius: "20px", display: "flex" }} 
         height={800}
@@ -38,7 +38,7 @@ export default function TaskModal({ lists }) {
             borderRadius: "20px"
           }} />
         </div>
-        <TaskForm lists={lists} />
+        <TaskForm hide={hide} lists={lists} />
       </Rodal>
     </div>
   )

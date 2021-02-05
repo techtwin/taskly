@@ -5,10 +5,9 @@
   grid-row-gap: 0px;
 }
 
-.cardCont {
-  height: 80%;
+.cards {
+  height: 65%;
   overflow-y: scroll;
-  max-height: 100vh;
 }
 
 .modalSubmitBtn:focus {
@@ -17,4 +16,15 @@
 
 .modalSubmitBtn:active {
   transform: scale(0.8);
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+.addTaskBtn {
+  position: relative;
+  cursor: pointer;
+  margin-top: -40px;
+  margin-left: 480px;
 }
