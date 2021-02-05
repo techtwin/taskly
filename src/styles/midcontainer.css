@@ -5,7 +5,7 @@
   grid-row-gap: 0px;
 }
 
-.cards {
+.cardContainer {
   height: 65%;
   overflow-y: scroll;
 }

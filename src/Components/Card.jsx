@@ -15,8 +15,8 @@ export default function Card({ taskObj }) {
   }
 
   return (
-    <div className="card">
-      <div className="cardBtns">
+    <div className="card slide-in-fwd-center">
+      <div className="deleteBtn">
         <button onClick={deleteHandler} style={{
           backgroundColor: "transparent",
           border: "none",

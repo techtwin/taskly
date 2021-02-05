@@ -32,7 +32,7 @@ export default function MidContainer() {
     <div className="middleCont">
       <ListModal />
       <TaskModal lists={lists} />
-      <div className="cards">
+      <div className="cardContainer">
         {allTasks}
       </div>
     </div>
