@@ -5,6 +5,9 @@ import { useDispatch } from 'react-redux'
 
 export default function Card({ taskObj }) {
 
+  console.log("Tasks in Card component:", taskObj)
+
+
   const dispatch = useDispatch()
 
   const deleteHandler = () => {
@@ -26,7 +29,14 @@ export default function Card({ taskObj }) {
       <div className="cardContent">
         <h1>{taskObj.name}</h1>
         <span>{taskObj.date}</span> - <span>{taskObj.time}</span><br /><br />
-        <h2>{taskObj.color}</h2>
+        <div className="listTypeDiv">
+          <h2
+            className="listType"
+            style={{ backgroundColor: `${taskObj.list.color}` }}
+          >
+            {taskObj.list.name}
+          </h2>
+        </div>
         <p>{taskObj.description}</p><br />
       </div>
     </div>

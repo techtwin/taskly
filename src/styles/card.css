@@ -22,3 +22,21 @@
 .cardBtns button:focus {
   outline: none !important;
 }
+
+.listTypeDiv {
+  margin-top: -15px;
+  width: 18%;
+  border-radius: 80px;
+}
+
+.listType {
+  color: #fff;
+  font-size: 18px;
+  font-weight: 900;
+  text-align: center;
+  padding-bottom: 8px;
+  border-radius: 20px;
+  position: relative;
+  width: 100%;
+  height: 15px;
+}
