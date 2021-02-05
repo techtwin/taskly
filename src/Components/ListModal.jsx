@@ -17,8 +17,28 @@ export default function ListModal() {
   }
 
   return (
-    <div>
-      <button onClick={show}>Add List</button>
+    <>
+      <h1 style={{ display: "inline-block", marginLeft: "100px" }}>Your Agenda</h1>
+      <button
+        className="listModalBtn"
+        style={{
+          cursor: "pointer",
+          color: "white",
+          backgroundColor: "black",
+          display: "inline-block",
+          borderRadius: "20px",
+          border: "none",
+          marginLeft: "120px",
+          marginBottom: "50px",
+          padding: "10px",
+          width: "200px",
+          fontSize: "20px",
+          fontWeight: 900
+        }}
+        onClick={show}
+      >
+        New List
+      </button>
       <Rodal
         customStyles={{ borderRadius: "20px", display: "flex" }} 
         height={340}
@@ -39,8 +59,8 @@ export default function ListModal() {
             borderRadius: "20px"
           }} />
         </div>
-        <ListForm />
+        <ListForm hide={hide} />
       </Rodal>
-    </div>
+    </>
   )
 }

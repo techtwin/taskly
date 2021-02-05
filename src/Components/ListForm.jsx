@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { createNewList } from '../redux/list';
 import { useDispatch } from 'react-redux'
 
-export default function ListForm() {
+export default function ListForm({ hide }) {
 
   const [state, setState] = useState({ name: "", color: ""})
   const dispatch = useDispatch()
@@ -25,7 +25,10 @@ export default function ListForm() {
         <input type="text" name="name" value={state.name} onChange={changeHandler} placeholder="Name"></input><br /><br />
         <h1>Color</h1>
         <input type="color" name="color" value={state.color} onChange={changeHandler} placeholder="Color" style={{ marginLeft: "12px"}}></input><br /><br />
-        <button className="modalSubmitBtn" style={{
+        <button
+          onClick={hide}
+          className="modalSubmitBtn"
+          style={{
           cursor: "pointer",
           color: "white",
           backgroundColor: "#F8D57E",

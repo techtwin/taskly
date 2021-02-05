@@ -18,6 +18,14 @@
   transform: scale(0.8);
 }
 
+.listModalBtn:focus {
+  outline: none;
+}
+
+.listModalBtn:active {
+  transform: scale(0.8);
+}
+
 ::-webkit-scrollbar {
   display: none;
 }
@@ -27,4 +35,12 @@
   cursor: pointer;
   margin-top: -40px;
   margin-left: 480px;
+}
+
+.addTaskBtn:focus {
+  outline: none;
+}
+
+.addTaskBtn:active {
+  transform: scale(0.8);
 }

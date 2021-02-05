@@ -16,12 +16,16 @@
   padding-right: 20px;
 }
 
-.cardBtns button {
+.deleteBtn button {
   cursor: pointer;
 }
 
-.cardBtns button:focus {
+.deleteBtn button:focus {
   outline: none !important;
+}
+
+.deleteBtn button:active {
+  transform: scale(0.3);
 }
 
 .listTypeDiv {
