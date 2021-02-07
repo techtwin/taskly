@@ -2,6 +2,8 @@
   background-color: #f6f7fb93;
   border-radius: 20px;
   margin: 10px 80px 45px;
+  /* top/right/bottom/left */
+  /* margin: 10px 0px 45px 80px; with right side of card closer to the right nav */
   max-height: 100vh;
   /* box-shadow: 15px 25px #e5e6eb5e; */
 }
