@@ -3,7 +3,7 @@
   border-radius: 20px;
   margin: 10px 80px 45px;
   max-height: 100vh;
-  box-shadow: 15px 25px #e5e6eb5e;
+  /* box-shadow: 15px 25px #e5e6eb5e; */
 }
 
 .cardContent {
