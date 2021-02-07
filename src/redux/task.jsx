@@ -9,7 +9,7 @@ const taskSlice = createSlice({
       state.tasks = action.payload
     },
     createTask: (state, action) => {
-      state.tasks = [...state.tasks, action.payload]
+      state.tasks = [ action.payload, ...state.tasks]
     },
     deleteTask: (state, action) => {
       const newArr = [...state.tasks]
