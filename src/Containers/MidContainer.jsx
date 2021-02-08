@@ -20,7 +20,7 @@ export default function MidContainer() {
     dispatch(fetchAllTasks())
     dispatch(fetchAllLists())
   }, [dispatch])
-  
+
   const allTasks = tasks.map(task => (
     <Card 
       lists={lists}
@@ -28,7 +28,7 @@ export default function MidContainer() {
       taskObj={task}
     />
   ))
-  
+
   return (
     <div className="middleCont">
       <ListModal />

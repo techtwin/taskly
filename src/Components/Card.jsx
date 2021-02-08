@@ -1,22 +1,23 @@
 import React from 'react'
 import '../styles/card.css'
-import { deleteCurrentTask } from '../redux/task'
+import { deleteCurrentTask, toggleCompleted } from '../redux/task'
 import { useDispatch } from 'react-redux'
 import EditTaskModal from './EditTaskModal'
 
 export default function Card({ lists, taskObj }) {
 
-  console.log("Tasks in Card component:", taskObj.completed)
+  const { id, completed } = taskObj
 
-
+  console.log("Tasks in Card component:", id, completed)
+  
   const dispatch = useDispatch()
 
   const deleteHandler = () => {
     dispatch(deleteCurrentTask(taskObj.id))
   }
 
-  const handleCompleted = (e) => {
-    // persist changes on server
+  const handleCompleted = () => {
+    dispatch(toggleCompleted(id, taskObj))
   }
 
   return (
@@ -54,7 +55,7 @@ export default function Card({ lists, taskObj }) {
       {/* checkbox here that onClick toggles completed status in state from true to false */}
       <label>
         Completed?
-        <input type="checkbox"></input>
+        <input type="checkbox" onChange={e => handleCompleted(e.target.checked)} checked={completed}></input>
       </label>
     </div>
   )

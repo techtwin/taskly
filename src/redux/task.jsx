@@ -20,12 +20,19 @@ const taskSlice = createSlice({
       const i = updatedState.findIndex((task) => task.id === action.payload.id)
       updatedState[i] = action.payload
       state.tasks = updatedState
+    },
+    toggleTask: (state, action) => {
+      let newArr = [...state.tasks]
+      const task = newArr.find(task => task.id === action.payload.id)
+      if (task) {
+        task.completed = !task.completed
+      }
     }
   }
 })
 
 // actions
-const { fetchTasks, createTask, deleteTask, updateTask } = taskSlice.actions
+const { fetchTasks, createTask, deleteTask, updateTask, toggleTask } = taskSlice.actions
 
 export const fetchAllTasks = () => {
   return function (dispatch) {
@@ -77,6 +84,24 @@ export const deleteCurrentTask = (taskId) => {
       method: "DELETE"
     })
     dispatch(deleteTask(taskId))
+  }
+}
+
+export const toggleCompleted = (taskId, completed) => {
+  return function (dispatch) {
+    fetch(`${url}tasks/${taskId}`, {
+      method: "PATCH",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ completed: completed })
+    })
+      .then(r => r.json())
+      .then(data => {
+        const action = toggleTask(data)
+        dispatch(action)
+        console.log("toggling in task action:", data)
+      })
   }
 }
 
