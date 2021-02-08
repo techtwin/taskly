@@ -30,12 +30,12 @@
   transform: scale(0.3);
 }
 
-/* .editBtn {
+.editBtn {
   display: flex;
   justify-content: flex-end;
   padding-right: 40px;
   padding-bottom: 30px;
-} */
+}
 
 .editBtn:active {
   /* transform: scale(0.1); */
