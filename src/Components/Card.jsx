@@ -17,7 +17,7 @@ export default function Card({ lists, taskObj }) {
   }
 
   const handleCompleted = () => {
-    dispatch(toggleCompleted(id, taskObj))
+    dispatch(toggleCompleted(id, !completed))
   }
 
   return (
