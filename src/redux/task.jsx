@@ -16,7 +16,7 @@ const taskSlice = createSlice({
       state.tasks = newArr.filter((task) => task.id !== action.payload)
     }, 
     updateTask: (state, action) => {
-      let updatedState = [...state]
+      let updatedState = [...state.tasks]
       const i = updatedState.findIndex((task) => task.id === action.payload)
       updatedState[i] = action.payload
       state.tasks = updatedState

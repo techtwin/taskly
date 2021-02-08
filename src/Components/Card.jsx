@@ -2,6 +2,7 @@ import React from 'react'
 import '../styles/card.css'
 import { deleteCurrentTask } from '../redux/task'
 import { useDispatch } from 'react-redux'
+import EditTaskModal from './EditTaskModal'
 
 export default function Card({ lists, taskObj }) {
 
@@ -15,7 +16,7 @@ export default function Card({ lists, taskObj }) {
   }
 
   return (
-    <div className="card slide-in-fwd-center">
+    <div className="card">
         {/* delete button */}
       <div className="deleteBtn">
         <button
@@ -51,7 +52,7 @@ export default function Card({ lists, taskObj }) {
             cursor: "pointer"
           }}
         >
-          Edit
+          <EditTaskModal lists={lists} taskObj={taskObj} />
         </button>
       </div>
     </div>
