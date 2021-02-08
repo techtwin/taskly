@@ -3,7 +3,7 @@ import '../styles/card.css'
 import { deleteCurrentTask } from '../redux/task'
 import { useDispatch } from 'react-redux'
 
-export default function Card({ taskObj }) {
+export default function Card({ lists, taskObj }) {
 
   console.log("Tasks in Card component:", taskObj)
 
@@ -16,8 +16,11 @@ export default function Card({ taskObj }) {
 
   return (
     <div className="card slide-in-fwd-center">
+        {/* delete button */}
       <div className="deleteBtn">
-        <button onClick={deleteHandler} style={{
+        <button
+          onClick={deleteHandler}
+          style={{
           backgroundColor: "transparent",
           border: "none",
           marginTop: "15px",
@@ -26,6 +29,7 @@ export default function Card({ taskObj }) {
           <img src="./Move.png" alt="delete button"/>
         </button>
       </div>
+        {/* card content */}
       <div className="cardContent">
         <h1>{taskObj.name}</h1>
         <span>{taskObj.date}</span> - <span>{taskObj.time}</span><br /><br />
@@ -37,6 +41,18 @@ export default function Card({ taskObj }) {
           </h2>
         </div>
         <p style={{ paddingRight: "90px"}}>{taskObj.description}</p><br />
+      </div>
+        {/* edit button */}
+      <div className="editBtn">
+        <button
+          style={{
+            backgroundColor: "transparent",
+            border: "none",
+            cursor: "pointer"
+          }}
+        >
+          Edit
+        </button>
       </div>
     </div>
   )

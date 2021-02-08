@@ -23,6 +23,7 @@ export default function MidContainer() {
   
   const allTasks = tasks.map(task => (
     <Card 
+      lists={lists}
       key={task.id}
       taskObj={task}
     />

@@ -30,6 +30,17 @@
   transform: scale(0.3);
 }
 
+/* .editBtn {
+  display: flex;
+  justify-content: flex-end;
+  padding-right: 40px;
+  padding-bottom: 30px;
+} */
+
+.editBtn:active {
+  /* transform: scale(0.1); */
+}
+
 .listTypeDiv {
   display: flex;
   margin-top: -15px;

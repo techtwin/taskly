@@ -14,12 +14,18 @@ const taskSlice = createSlice({
     deleteTask: (state, action) => {
       const newArr = [...state.tasks]
       state.tasks = newArr.filter((task) => task.id !== action.payload)
+    }, 
+    updateTask: (state, action) => {
+      let updatedState = [...state]
+      const i = updatedState.findIndex((task) => task.id === action.payload)
+      updatedState[i] = action.payload
+      state.tasks = updatedState
     }
   }
 })
 
 // actions
-const { fetchTasks, createTask, deleteTask } = taskSlice.actions
+const { fetchTasks, createTask, deleteTask, updateTask } = taskSlice.actions
 
 export const fetchAllTasks = () => {
   return function (dispatch) {
@@ -44,6 +50,24 @@ export const createNewTask = (task) => {
         dispatch(action)
         console.log(data)
       })
+  }
+}
+
+export const editTask = (taskId, taskObj) => {
+  return function (dispatch) {
+    fetch(`${url}tasks/${taskId}`, {
+      method: "PATCH",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(taskObj)
+    })
+      .then(r => r.json())
+      .then(data => {
+        const action = updateTask(data)
+        dispatch(action)
+        console.log("Updated task:", data)
+    })
   }
 }
 
