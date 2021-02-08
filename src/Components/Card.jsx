@@ -15,6 +15,10 @@ export default function Card({ lists, taskObj }) {
     dispatch(deleteCurrentTask(taskObj.id))
   }
 
+  const handleCompleted = (e) => {
+    // persist changes on server
+  }
+
   return (
     <div className="card">
         {/* delete button */}
@@ -47,6 +51,11 @@ export default function Card({ lists, taskObj }) {
       <div className="editBtn">
         <EditTaskModal lists={lists} taskObj={taskObj} />
       </div>
+      {/* checkbox here that onClick toggles completed status in state from true to false */}
+      <label>
+        Completed?
+        <input type="checkbox"></input>
+      </label>
     </div>
   )
 }
