@@ -17,7 +17,16 @@ export default function EditTaskModal({ taskObj, lists }) {
 
   return (
     <>
-      <span onClick={show}>Edit</span>
+      <button
+        style={{
+        backgroundColor: "transparent",
+        border: "none",
+        cursor: "pointer"
+      }}
+        onClick={show}
+      >
+        Edit
+      </button>
       <Rodal
         customStyles={{ borderRadius: "20px", display: "flex" }} 
         height={800}

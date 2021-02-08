@@ -6,7 +6,7 @@ import EditTaskModal from './EditTaskModal'
 
 export default function Card({ lists, taskObj }) {
 
-  console.log("Tasks in Card component:", taskObj)
+  console.log("Tasks in Card component:", taskObj.completed)
 
 
   const dispatch = useDispatch()
@@ -45,15 +45,7 @@ export default function Card({ lists, taskObj }) {
       </div>
         {/* edit button */}
       <div className="editBtn">
-        <button
-          style={{
-            backgroundColor: "transparent",
-            border: "none",
-            cursor: "pointer"
-          }}
-        >
-          <EditTaskModal lists={lists} taskObj={taskObj} />
-        </button>
+        <EditTaskModal lists={lists} taskObj={taskObj} />
       </div>
     </div>
   )
