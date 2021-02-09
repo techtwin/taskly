@@ -1,11 +1,25 @@
 import * as ROUTES from "./routes";
-import { useSelector } from "react-redux";
-import { Switch, Route, Redirect } from "react-router-dom";
+import React, { useEffect } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import { Switch, Route, Redirect, useHistory } from "react-router-dom";
 import { Home, Dashboard } from "./pages";
+import { checkLogin } from "./redux/user";
 
 function App() {
   const currentUser = useSelector(({ currentUser }) => currentUser.currentUser);
+  const dispatch = useDispatch();
+  const history = useHistory();
+
   console.log("currentUser:", currentUser);
+
+  useEffect(() => {
+    const token = localStorage.getItem("token");
+    if (token) {
+      dispatch(checkLogin(token));
+    } else {
+      history.push("/");
+    }
+  }, []);
 
   return (
     <div className="main">

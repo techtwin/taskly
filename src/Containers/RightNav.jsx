@@ -11,7 +11,7 @@ export default function RightNav() {
   const dispatch = useDispatch()
 
   const handleSignOut = () => {
-    localStorage.removeItem("USER_DATA")
+    localStorage.removeItem("token")
     dispatch(logOut)
   }
   
