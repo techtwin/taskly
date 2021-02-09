@@ -1,4 +1,4 @@
-import React from 'react'
+import React,{ useEffect } from 'react'
 import '../styles/rightnav.css'
 import { useDispatch, useSelector } from 'react-redux'
 import { logOut } from '../redux/user'
@@ -14,21 +14,28 @@ export default function RightNav() {
     localStorage.removeItem("token")
     dispatch(logOut)
   }
-  
+  // conditional here to check for user
   return (
     <div className="rightNav">
-      <div key={currentUser.id} className="accountInfo">
-        <h1>{currentUser.name}</h1>
-        <img className="userImg" src={currentUser.img} alt="user"/>
-      </div>
-        <Link to="/"><button onClick={handleSignOut}>Logout</button></Link>
-      <div className="githubDiv">
-        <h1 className="githubTitle">Checkout my Github here.</h1>
-        <img className="gitman" src="./gitman.png" alt="avatar" />
-        <a role="button" href="https://github.com/techtwins" target="_blank" rel="noreferrer" className="gitmanBtn">
-          <img src="./github-btn.png" alt="github link" />
-        </a>
-      </div>
+      {currentUser
+        ?
+        <div>
+            <div key={currentUser.id} className="accountInfo">
+            <h1>{currentUser.name}</h1>
+            <img className="userImg" src={currentUser.img} alt="user"/>
+          </div>
+            <Link to="/"><button onClick={handleSignOut}>Logout</button></Link>
+          <div className="githubDiv">
+            <h1 className="githubTitle">Checkout my Github here.</h1>
+            <img className="gitman" src="./gitman.png" alt="avatar" />
+            <a role="button" href="https://github.com/techtwins" target="_blank" rel="noreferrer" className="gitmanBtn">
+              <img src="./github-btn.png" alt="github link" />
+            </a>
+          </div>
+        </div>
+        : 
+        <p> Im loading</p>}
+      
     </div>
   )
 }
