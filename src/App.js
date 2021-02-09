@@ -5,7 +5,7 @@ import { Home, Dashboard } from "./pages";
 
 function App() {
   const currentUser = useSelector(({ currentUser }) => currentUser.currentUser);
-  console.log(currentUser);
+  console.log("currentUser:", currentUser);
 
   return (
     <div className="main">
