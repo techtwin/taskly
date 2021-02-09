@@ -14,7 +14,7 @@ export default function MidContainer() {
   const lists = useSelector(({ lists }) => lists.lists)
   const dispatch = useDispatch()
 
-  console.log(tasks)
+  // console.log(tasks)
 
   useEffect(() => {
     dispatch(fetchAllTasks())

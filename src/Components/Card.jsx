@@ -8,7 +8,7 @@ export default function Card({ lists, taskObj }) {
 
   const { id, completed } = taskObj
 
-  console.log("Tasks in Card component:", id, completed)
+  // console.log("Tasks in Card component:", id, completed)
   
   const dispatch = useDispatch()
 

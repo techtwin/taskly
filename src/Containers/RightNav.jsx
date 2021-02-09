@@ -1,4 +1,4 @@
-import React,{ useEffect } from 'react'
+import React from 'react'
 import '../styles/rightnav.css'
 import { useDispatch, useSelector } from 'react-redux'
 import { logOut } from '../redux/user'
@@ -14,17 +14,17 @@ export default function RightNav() {
     localStorage.removeItem("token")
     dispatch(logOut)
   }
-  // conditional here to check for user
+
   return (
     <div className="rightNav">
       {currentUser
         ?
         <div>
-            <div key={currentUser.id} className="accountInfo">
+          <div key={currentUser.id} className="accountInfo">
             <h1>{currentUser.name}</h1>
             <img className="userImg" src={currentUser.img} alt="user"/>
           </div>
-            <Link to="/"><button onClick={handleSignOut}>Logout</button></Link>
+          <Link to="/"><button onClick={handleSignOut}>Logout</button></Link>
           <div className="githubDiv">
             <h1 className="githubTitle">Checkout my Github here.</h1>
             <img className="gitman" src="./gitman.png" alt="avatar" />
@@ -34,8 +34,7 @@ export default function RightNav() {
           </div>
         </div>
         : 
-        <p> Im loading</p>}
-      
+        <p>Im loading...</p>}
     </div>
   )
 }
