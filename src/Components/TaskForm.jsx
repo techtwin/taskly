@@ -11,6 +11,7 @@ export default function TaskForm({ lists, hide }) {
   const submitHandler = e => {
     e.preventDefault()
     dispatch(createNewTask(state))
+    setState({ name: "", description: "", date: "", time: "", list_id: null })
   }
 
   const changeHandler = e => {
