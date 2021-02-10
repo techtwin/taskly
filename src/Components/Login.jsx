@@ -23,7 +23,8 @@ export default function Login() {
         <h1>Log In</h1>
         <input type="text" value={state.username} name="username" onChange={changeHandler} placeholder="Username" />
         <input type="password" value={state.password} name="password" onChange={changeHandler} placeholder="Password" />
-        <button>Log In</button>
+        <br />
+        <button style={{ marginTop: "40px"}}>Log In</button>
       </form>
     </>
   )
