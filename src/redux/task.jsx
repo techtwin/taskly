@@ -38,9 +38,29 @@ export const fetchAllTasks = () => {
   return function (dispatch) {
     fetch(`${url}tasks`)
     .then(r => r.json())
-    .then(data => dispatch(fetchTasks(data)))
+      .then(data => {
+        console.log(data)
+        dispatch(fetchTasks(data))
+      })
   }
 }
+
+// export const fetchAllTasks = () => {
+//   return function (dispatch) {
+//     fetch(`${url}lists`)
+//     .then(r => r.json())
+//       .then(data => {
+//         console.log("data on task action:", data)
+
+//         data.map(list => {
+//           return list.tasks.map(task => {
+//             console.log("fetch map:", task)
+//             return dispatch(fetchTasks(task))
+//           })
+//         })
+//       })
+//   }
+// }
 
 export const createNewTask = (task) => {
   return function (dispatch) {

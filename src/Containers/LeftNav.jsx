@@ -20,13 +20,17 @@ export default function LeftNav() {
 
   const allTasks = () => {
     return tasks.map(task => {
-      return {
-        title: task.name,
-        start: moment(task.date),
-        end: moment(task.date),
-        allDay: true,
-        resourceId: 10,
-        tooltipAccessor: task.name
+      if (task.completed) {
+        return null
+      } else {
+        return {
+          title: task.name,
+          start: moment(task.date),
+          end: moment(task.date),
+          allDay: true,
+          resourceId: 10,
+          tooltipAccessor: task.name
+        }
       }
     })
   }

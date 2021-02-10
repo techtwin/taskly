@@ -7,7 +7,6 @@ import EditTaskModal from './EditTaskModal'
 export default function Card({ lists, taskObj }) {
 
   const { id, completed } = taskObj
-
   // console.log("Tasks in Card component:", id, completed)
   
   const dispatch = useDispatch()
