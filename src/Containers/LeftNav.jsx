@@ -29,12 +29,16 @@ export default function LeftNav() {
           start: moment(task.date),
           end: moment(task.date),
           allDay: true,
-          resourceId: 10,
+          resourceId: task.id,
           tooltipAccessor: task.name
         }
       }
     })
   }
+
+  // const eventStyleGetter = (event, start, end, isSelected) => {
+
+  // }
 
   return (
     <div className="leftCont">
@@ -45,7 +49,14 @@ export default function LeftNav() {
         startAccessor="start"
         endAccessor="end"
         defaultDate={new Date()}
+        eventPropGetter={event => {
+          console.log("calendar eventprop:", event)
+          const mappedTasks = tasks.map(task => task.list.color);
+          const backgroundColor = mappedTasks
+          return { style: { backgroundColor } };
+        }}
         style={{ margin: "6%", height: 700, boxShadow: "15px 25px #e5e6eb5e" }}
+        // toolbar={false}
       />
     </div>
   )

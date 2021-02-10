@@ -58,6 +58,7 @@ input[type="checkbox"] {
 .listTypeDiv {
   display: flex;
   margin-top: -15px;
+  margin-bottom: 15px;
   border-radius: 80px;
   text-align: center;
 }
