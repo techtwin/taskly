@@ -1,15 +1,17 @@
 import React, { useState } from 'react'
 import { createNewList } from '../redux/list';
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 
-export default function ListForm({ hide }) {
+export default function ListForm({  hide }) {
+  const currentUser = useSelector(({ currentUser }) => currentUser.currentUser);
 
-  const [state, setState] = useState({ name: "", color: "" })
+  const [state, setState] = useState({ user_id: null, name: "", color: "" })
   const dispatch = useDispatch()
+  const { name, color } = state
 
   const submitHandler = e => {
     e.preventDefault()
-    dispatch(createNewList(state))
+    dispatch(createNewList(currentUser.id, name, color))
     setState({ name: "", color: "" })
   }
 

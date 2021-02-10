@@ -10,15 +10,22 @@ import TaskModal from '../Components/TaskModal'
 
 export default function MidContainer() {
 
+  const currentUser = useSelector(({ currentUser }) => currentUser.currentUser);
   const tasks = useSelector(({ tasks }) => tasks.tasks)
   const lists = useSelector(({ lists }) => lists.lists)
   const dispatch = useDispatch()
+  // const id = currentUser.id
 
-  // console.log(tasks)
+  console.log("Mid Cont:", tasks)
+  console.log("Current user in mid cont", currentUser)
 
   useEffect(() => {
-    dispatch(fetchAllTasks())
-    dispatch(fetchAllLists())
+    if (currentUser) {
+      dispatch(fetchAllLists(currentUser.id))
+      dispatch(fetchAllTasks(currentUser.id))
+    } else {
+      <p>I'm Loading...</p>
+    }
   }, [dispatch])
 
   const allTasks = tasks.map(task => (
@@ -31,7 +38,7 @@ export default function MidContainer() {
 
   return (
     <div className="middleCont">
-      <ListModal />
+      <ListModal currentUser={currentUser}/>
       <TaskModal lists={lists} />
       <div className="cardContainer">
         {allTasks}

@@ -6,7 +6,7 @@ const taskSlice = createSlice({
   initialState: { tasks: [] },
   reducers: {
     fetchTasks: (state, action) => {
-      state.tasks = action.payload
+      state.tasks = [action.payload, ...state.tasks]
     },
     createTask: (state, action) => {
       state.tasks = [ action.payload, ...state.tasks]
@@ -27,40 +27,35 @@ const taskSlice = createSlice({
       if (task) {
         task.completed = !task.completed
       }
+    },
+    emptyArr: () => {
+      return []
     }
   }
 })
 
 // actions
-const { fetchTasks, createTask, deleteTask, updateTask, toggleTask } = taskSlice.actions
+const { fetchTasks, createTask, deleteTask, updateTask, toggleTask, emptyArr } = taskSlice.actions
 
-export const fetchAllTasks = () => {
+export const fetchAllTasks = (userId) => {
   return function (dispatch) {
     fetch(`${url}tasks`)
     .then(r => r.json())
       .then(data => {
-        // console.log(data)
-        dispatch(fetchTasks(data))
+        console.log(data)
+
+        dispatch(emptyArr)
+        data.map(task => {
+          console.log("task in map action:", task.list.user.id)
+          if (task.list.user.id === userId) {
+            return dispatch(fetchTasks(task))
+          }
+          return data
+        })
+        // dispatch(fetchTasks(data))
       })
   }
 }
-
-// export const fetchAllTasks = () => {
-//   return function (dispatch) {
-//     fetch(`${url}lists`)
-//     .then(r => r.json())
-//       .then(data => {
-//         console.log("data on task action:", data)
-
-//         data.map(list => {
-//           return list.tasks.map(task => {
-//             console.log("fetch map:", task)
-//             return dispatch(fetchTasks(task))
-//           })
-//         })
-//       })
-//   }
-// }
 
 export const createNewTask = (task) => {
   return function (dispatch) {

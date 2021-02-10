@@ -12,6 +12,7 @@ const localizer = momentLocalizer(moment)
 export default function LeftNav() {
 
   const tasks = useSelector(({ tasks }) => tasks.tasks)
+  console.log("In leftnav:", tasks)
   const dispatch = useDispatch()
 
   useEffect(() => {

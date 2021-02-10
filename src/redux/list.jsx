@@ -6,38 +6,56 @@ const listSlice = createSlice({
   initialState: { lists: [] },
   reducers: {
     fetchLists: (state, action) => {
-      state.lists = action.payload
+      state.lists = [...state.lists, action.payload]
     },
     createList: (state, action) => {
       state.lists = [ ...state.lists, action.payload]
+    },
+    emptyArr: () => {
+      return []
     }
   }
 })
 
-const { fetchLists, createList } = listSlice.actions
+const { fetchLists, createList, emptyArr} = listSlice.actions
 
-export const fetchAllLists = () => {
+export const fetchAllLists = (userId) => {
   return function (dispatch) {
     fetch(`${url}lists`)
     .then(r => r.json())
-    .then(data => dispatch(fetchLists(data)))
+      .then(data => {
+
+        dispatch(emptyArr)
+        data.map(list => {
+          console.log("list in map action:", list)
+          if (list.user.id === userId) {
+            return dispatch(fetchLists(list))
+          }
+          return data
+        })
+        // dispatch(fetchLists(data))
+      })
   }
 }
 
-export const createNewList = (list) => {
+export const createNewList = (userId, name, color) => {
   return function (dispatch) {
     fetch(`${url}lists`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
       },
-      body: JSON.stringify(list)
+      body: JSON.stringify({
+        user_id: userId,
+        name: name,
+        color: color
+      })
     })
       .then(r => r.json())
       .then(data => {
         const action = createList(data)
         dispatch(action)
-        console.log(data)
+        console.log("List in action newList:", data)
       })
   }
 }

@@ -19,7 +19,7 @@ export default function Signup() {
     dispatch(signup(state))
   }
 
-  const handfileChange = (e) => {
+  const handlefileChange = (e) => {
     console.log(e.target.files[0])
     const reader = new FileReader()
     reader.onload = () => {
@@ -44,7 +44,7 @@ export default function Signup() {
         <div className="imageHolder">
           <img src={img} alt="" className="img"/>
         </div>
-        <input id="files" style={{ }} type="file" name="img" onChange={handfileChange} />
+        <input id="files" type="file" name="img" accept="image/*" onChange={handlefileChange} />
         <div className="label">
           <label style={{ display: "inline-block", marginTop: "40px"}} className="image-upload" htmlFor="files">Upload image</label><br />
         </div>

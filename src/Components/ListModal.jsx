@@ -4,7 +4,7 @@ import Rodal from 'rodal'
 import 'rodal/lib/rodal.css';
 import ListForm from './ListForm';
 
-export default function ListModal() {
+export default function ListModal({ currentUser }) {
 
   const [visible, setVisible] = useState(false)
 
@@ -59,7 +59,7 @@ export default function ListModal() {
             borderRadius: "20px"
           }} />
         </div>
-        <ListForm hide={hide} />
+        <ListForm currentUser={currentUser} hide={hide} />
       </Rodal>
     </>
   )
