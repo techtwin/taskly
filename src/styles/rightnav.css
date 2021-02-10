@@ -17,6 +17,8 @@
 .userImg {
   object-fit: contain;
   transform: scale(0.7);
+  width: 150px;
+  height: 150px;
   border-radius: 50%;
   margin-top: -25px;
   margin-right: 280px;
