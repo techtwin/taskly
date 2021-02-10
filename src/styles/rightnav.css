@@ -34,6 +34,7 @@
   padding-top: 50px;
   margin-left: 65px;
   font-size: 20px;
+  box-shadow: 15px 25px #e5e6eb5e;
 }
 
 .gitman {
@@ -46,7 +47,7 @@
 
 .gitmanBtn {
   position: absolute;
-  top: 450px;
+  top: 440px;
   right: 10px;
   transform: scale(0.7);
   cursor: pointer;

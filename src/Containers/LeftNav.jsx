@@ -45,9 +45,10 @@ export default function LeftNav() {
         startAccessor="start"
         endAccessor="end"
         defaultDate={new Date()}
-        style={{ margin: "4%", height: 700}}
+        style={{ margin: "6%", height: 700, boxShadow: "15px 25px #e5e6eb5e" }}
       />
     </div>
   )
 }
+// box-shadow: 15px 25px #e5e6eb5e;
 

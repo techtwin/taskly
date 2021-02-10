@@ -2,10 +2,11 @@
   background-color: #f6f7fb93;
   border-radius: 20px;
   margin: 10px 80px 45px;
+  position: relative;
   /* top/right/bottom/left */
   /* margin: 10px 0px 45px 80px; with right side of card closer to the right nav */
   max-height: 100vh;
-  /* box-shadow: 15px 25px #e5e6eb5e; */
+  box-shadow: 15px 25px #e5e6eb5e;
 }
 
 .cardContent {
@@ -31,14 +32,27 @@
 }
 
 .editBtn {
-  display: flex;
-  justify-content: flex-end;
-  padding-right: 40px;
-  padding-bottom: 30px;
+  display: inline-block;
+  position: absolute;
+  right: 40px;
+  font-weight: 600;
 }
 
-.editBtn:active {
-  /* transform: scale(0.1); */
+/* .editBtn:active {
+  transform: scale(0.1);
+} */
+
+.completedMark {
+  display: inline-block;
+  padding-left: 50px;
+  padding-bottom: 30px;
+  margin-right: 20px;
+  font-weight: 600;
+}
+
+input[type="checkbox"] {
+  transform: scale(1.2);
+  margin-right: 40px;
 }
 
 .listTypeDiv {
