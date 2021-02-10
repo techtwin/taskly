@@ -4,12 +4,13 @@ import { useDispatch } from 'react-redux'
 
 export default function ListForm({ hide }) {
 
-  const [state, setState] = useState({ name: "", color: ""})
+  const [state, setState] = useState({ name: "", color: "" })
   const dispatch = useDispatch()
 
   const submitHandler = e => {
     e.preventDefault()
     dispatch(createNewList(state))
+    setState({ name: "", color: "" })
   }
 
   const changeHandler = e => {
