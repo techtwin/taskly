@@ -4,7 +4,7 @@ import { signup } from '../redux/user';
 
 export default function Signup() {
 
-  const [state, setState] = useState({ username: "", name: "", password: "" })
+  const [state, setState] = useState({ username: "", name: "", password: "", img: null })
   const dispatch = useDispatch()
 
   const changeHandler = e => {
@@ -17,7 +17,12 @@ export default function Signup() {
     e.preventDefault()
     dispatch(signup(state))
   }
-  
+
+  const handfileChange = (e) => {
+    console.log(e.target.files[0])
+    setState({ ...state, [e.target.name]: e.target.files[0] })
+  }
+
   return (
     <>
       <form onSubmit={submitHandler}>
@@ -25,6 +30,8 @@ export default function Signup() {
         <input type="text" value={state.username} name="username" onChange={changeHandler} placeholder="Username" />
         <input type="text" value={state.name} name="name" onChange={changeHandler} placeholder="Name" />
         <input type="password" value={state.password} name="password" onChange={changeHandler} placeholder="Password" />
+        <br /><br />
+        <input type="file" name="img" onChange={handfileChange}/>
         <button>Sign Up</button>
       </form>
     </>

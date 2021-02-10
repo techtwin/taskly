@@ -22,7 +22,7 @@ export default function RightNav() {
         <div>
           <div key={currentUser.id} className="accountInfo">
             <h1>{currentUser.name}</h1>
-            <img className="userImg" src={currentUser.img} alt="user"/>
+            <img className="userImg" src={currentUser.img} alt="user img"/>
           </div>
           <Link to="/"><button onClick={handleSignOut}>Logout</button></Link>
           <div className="githubDiv">

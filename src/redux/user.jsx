@@ -61,28 +61,30 @@ export const checkLogin = (token) => {
 
 export const signup = (userObj) => {
   return function (dispatch) {
+    const form = new FormData()
+    form.append("username", userObj.username)
+    form.append("name", userObj.name)
+    form.append("password", userObj.password)
+    form.append("img", userObj.img)
+
     fetch(`${url}register`, {
       method: "POST",
-      headers: {
-        "Content-Type": "application/json"
-      },
-      body: JSON.stringify(userObj)
+      body: form
     })
-      .then(r => r.json())
-      .then(data => {
-        console.log(data)
-        if (data.user && data.token) {
-          const token = data.token
-          console.log("successfully created user", data.username)
-          localStorage.setItem("token", token);
-          const action = setCurrentUser(data.user)
-          dispatch(action)
-        } else {
-          console.log("user sign up failed")
-          window.alert("Please enter a username and password")
-        }
-      })
-    .catch(console.log)
+    .then(r => r.json())
+    .then(data => {
+      console.log(data)
+      if (data.user && data.token) {
+        const token = data.token
+        console.log("successfully created user", data.username)
+        localStorage.setItem("token", token);
+        const action = setCurrentUser(data.user)
+        dispatch(action)
+      } else {
+        console.log("user sign up failed")
+        window.alert("Please enter a username and password")
+      }
+    })
   }
 }
 
