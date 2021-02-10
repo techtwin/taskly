@@ -39,7 +39,7 @@ export const fetchAllTasks = () => {
     fetch(`${url}tasks`)
     .then(r => r.json())
       .then(data => {
-        console.log(data)
+        // console.log(data)
         dispatch(fetchTasks(data))
       })
   }
