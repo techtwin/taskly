@@ -20,7 +20,7 @@ export default function Card({ lists, taskObj }) {
   const remove = ({ onClose }) => {
     confirmAlert({
       title: 'Confirm to delete',
-      message: 'Are you sure to do this ?',
+      message: 'Are you sure you want to do this ?',
       buttons: [
         {
           label: 'Yes',
@@ -33,7 +33,7 @@ export default function Card({ lists, taskObj }) {
       ]
     });
   };
-  
+
   const handleCompleted = () => {
     dispatch(toggleCompleted(id, !completed))
   }

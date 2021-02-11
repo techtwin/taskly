@@ -22,7 +22,7 @@ export default function RightNav() {
   const logout = ({ onClose }) => {
     confirmAlert({
       title: 'Confirm to logout',
-      message: 'Are you sure want to logout ?',
+      message: 'Are you sure you want to logout ?',
       buttons: [
         {
           label: 'Yes',
