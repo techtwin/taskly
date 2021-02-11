@@ -19,8 +19,9 @@ export default function LeftNav() {
     dispatch(fetchAllTasks())
   }, [dispatch])
 
-  const allTasks = () => {
-    return tasks.map(task => {
+  const allTasks = () => (
+    tasks.map(task => {
+      console.log("alltasks in calendar:", task)
       if (task.completed) {
         return null
       } else {
@@ -30,36 +31,42 @@ export default function LeftNav() {
           end: moment(task.date),
           allDay: true,
           resourceId: task.id,
-          tooltipAccessor: task.name
+          tooltipAccessor: task.name,
+          color: task.list.color
         }
       }
     })
+  )
+  const eventStyleGetter = (event) => {
+    console.log("eventStyleGetter:", event);
+    var backgroundColor = event.color;
+    var style = {
+      backgroundColor: backgroundColor,
+      borderRadius: '20px',
+      color: 'black',
+      border: '1px solid #7e7d7d',
+      display: 'block'
+    };
+    return {
+      style: style
+    };
   }
-
-  // const eventStyleGetter = (event, start, end, isSelected) => {
-
-  // }
 
   return (
     <div className="leftCont">
       <img style={{ marginTop: "10px", marginLeft: "40px", marginBottom: "50px" }} src="./Logo.png" alt="logo" />
       <Calendar
         localizer={localizer}
-        events={allTasks()}
         startAccessor="start"
         endAccessor="end"
         defaultDate={new Date()}
-        eventPropGetter={event => {
-          console.log("calendar eventprop:", event)
-          const mappedTasks = tasks.map(task => task.list.color);
-          const backgroundColor = mappedTasks
-          return { style: { backgroundColor } };
-        }}
-        style={{ margin: "6%", height: 700, boxShadow: "15px 25px #e5e6eb5e" }}
-        // toolbar={false}
+        events={allTasks()}
+        eventPropGetter={eventStyleGetter}
+        views={['month', 'day', 'week']}
+        drilldownView="week"
+        style={{ margin: "5%", height: 700, boxShadow: "15px 25px #e5e6eb5e" }}
       />
     </div>
   )
 }
-// box-shadow: 15px 25px #e5e6eb5e;
 

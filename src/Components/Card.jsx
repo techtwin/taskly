@@ -41,7 +41,7 @@ export default function Card({ lists, taskObj }) {
               <h1 style={{ display: "inline-block", float: "left"}}>{taskObj.name}</h1>
               <span style={{ float: "right", marginTop: "30px"}}>{taskObj.time}</span>
             </div>
-            <div style={{marginRight: "200px", marginBottom: "30px"}}>
+            <div style={{marginRight: "300px", marginBottom: "30px"}}>
               <label style={{ marginTop: "50px"}} className="completedMark">
                 Completed ?
               </label>
