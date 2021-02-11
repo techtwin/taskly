@@ -3,6 +3,8 @@ import '../styles/card.css'
 import { deleteCurrentTask, toggleCompleted } from '../redux/task'
 import { useDispatch } from 'react-redux'
 import EditTaskModal from './EditTaskModal'
+import { confirmAlert } from 'react-confirm-alert'
+import 'react-confirm-alert/src/react-confirm-alert.css'
 
 export default function Card({ lists, taskObj }) {
 
@@ -10,10 +12,28 @@ export default function Card({ lists, taskObj }) {
   
   const dispatch = useDispatch()
 
+  
   const deleteHandler = () => {
     dispatch(deleteCurrentTask(taskObj.id))
   }
-
+  
+  const remove = ({ onClose }) => {
+    confirmAlert({
+      title: 'Confirm to delete',
+      message: 'Are you sure to do this ?',
+      buttons: [
+        {
+          label: 'Yes',
+          onClick: deleteHandler
+        },
+        {
+          label: 'No',
+          onClick: onClose
+        }
+      ]
+    });
+  };
+  
   const handleCompleted = () => {
     dispatch(toggleCompleted(id, !completed))
   }
@@ -26,7 +46,7 @@ export default function Card({ lists, taskObj }) {
            {/* delete button */}
             <div className="deleteBtn">
               <button
-                onClick={deleteHandler}
+                onClick={remove}
                 style={{
                 backgroundColor: "transparent",
                 border: "none",
@@ -55,7 +75,7 @@ export default function Card({ lists, taskObj }) {
             {/* delete button */}
             <div className="deleteBtn">
               <button
-                onClick={deleteHandler}
+                onClick={remove}
                 style={{
                 backgroundColor: "transparent",
                 border: "none",
