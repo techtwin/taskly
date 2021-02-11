@@ -1,21 +1,48 @@
-import React from 'react'
-import { useSelector } from 'react-redux'
+import React, { useEffect, useState } from 'react'
+import { useSelector, useDispatch } from 'react-redux'
 import '../styles/rightnav.css'
+import EditableLabel from 'react-inline-editing'
+import { editProfile } from '../redux/user'
 
 export default function Profile({ hide }) {
+  
   const currentUser = useSelector(({ currentUser }) => currentUser.currentUser)
+  const [state, setState] = useState({ name: currentUser.name })
+  const dispatch = useDispatch()
+
+  useEffect(() => {
+  }, [state])
+
+  const editedName = (text) => {
+    setState({ name: text })
+  }
+
+  const submitHandler = (e) => {
+    e.preventDefault()
+    const id = currentUser.id
+    dispatch(editProfile(id, state))
+  }
 
   return (
     <div className="profilePg">
       <div className="profileContent">
-        <h1>User Account</h1>
-        <hr className="profileHr" />
-        <img src={currentUser.img} alt="user avatar" />
-        <br />
-        <button>Change image</button>
-        <h2 style={{ marginBottom: "40px"}}>{currentUser.name}</h2>
-        <button className="profileSaveBtn">Save Changes</button>
-        <button className="profileCancelBtn" onClick={hide}>Cancel</button>
+        <form onSubmit={submitHandler}>
+          <h1>User Account</h1>
+          <hr className="profileHr" />
+          <img src={currentUser.img} alt="user avatar" />
+          <br />
+          <button type="button">Change image</button>
+          <EditableLabel
+            text={currentUser.name}
+            inputWidth='140px'
+            inputHeight='10px'
+            labelFontWeight='bold'
+            labelFontSize="25px"
+            onFocusOut={editedName}
+          />
+          <button type="submit" className="profileSaveBtn">Save Changes</button>
+          <button type="button" className="profileCancelBtn" onClick={hide}>Cancel</button>
+        </form>
       </div>
     </div>
   )
