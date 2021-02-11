@@ -86,3 +86,20 @@
 .logoutBtn:active {
   transform: scale(0.8);
 }
+
+.addFriendDiv {
+  background-color: #f6f7fb93;
+  border-radius: 20px;
+  width: 40%;
+  /* height: 50%; */
+  margin-top: 100px;
+  margin-left: 100px;
+  padding-top: 5px;
+  text-align: center;
+}
+
+.addFriendH1 {
+  font-family: Gilroy-Medium;
+  font-size: 25px;
+  font-weight: 400;
+}

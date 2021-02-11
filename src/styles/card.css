@@ -4,7 +4,7 @@
   margin: 10px 80px 45px;
   position: relative;
   /* top/right/bottom/left */
-  /* margin: 10px 0px 45px 80px; with right side of card closer to the right nav */
+  /* margin: 10px 45px 45px; */
   max-height: 100vh;
   box-shadow: 15px 25px #e5e6eb5e;
 }
