@@ -5,6 +5,7 @@ import { useHistory } from 'react-router-dom'
 import { logOut } from '../redux/user'
 import { confirmAlert } from 'react-confirm-alert'
 import 'react-confirm-alert/src/react-confirm-alert.css'
+import ProfileModal from '../Components/ProfileModal'
 
 export default function RightNav() {
 
@@ -45,7 +46,7 @@ export default function RightNav() {
             <h1>{currentUser.name}</h1>
             <img className="userImg" src={currentUser.img} alt="user img"/>
           </div>
-          <span className="mySettings">My settings</span>
+          <ProfileModal />
           <button className="logoutBtn" onClick={logout}>Logout</button>
           <div className="addFriendDiv">
             <h1 className="addFriendH1">Received Requests</h1>
@@ -87,7 +88,7 @@ export default function RightNav() {
             </h1>
             {/* <> */}
               {currentUser.requests_sent.map(friend => (
-                <div style={{ alignItems: "center", marginBottom: "20px", paddingLeft: "10px", paddingRight: "10px"}}>
+                <div key={friend.id} style={{ alignItems: "center", marginBottom: "20px", paddingLeft: "10px", paddingRight: "10px"}}>
                   <br />
                   <h2 style={{ marginTop: "30px", fontSize: "22px", fontWeight: "800"}}>{friend.name}</h2>
                   <img style={{ transform: "scale(0.8)", borderRadius: "46px" }} src={friend.img} alt="friends"></img>
