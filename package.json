@@ -12,6 +12,7 @@
     "moment": "^2.29.1",
     "react": "^17.0.1",
     "react-big-calendar": "^0.31.0",
+    "react-confirm-alert": "^2.7.0",
     "react-dom": "^17.0.1",
     "react-images-upload": "^1.2.8",
     "react-inline-editing": "^1.0.10",
