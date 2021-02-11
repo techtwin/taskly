@@ -12,7 +12,6 @@ const localizer = momentLocalizer(moment)
 export default function LeftNav() {
 
   const tasks = useSelector(({ tasks }) => tasks.tasks)
-  console.log("In leftnav:", tasks)
   const dispatch = useDispatch()
 
   useEffect(() => {
@@ -21,7 +20,6 @@ export default function LeftNav() {
 
   const allTasks = () => (
     tasks.map(task => {
-      console.log("alltasks in calendar:", task)
       if (task.completed) {
         return null
       } else {
@@ -38,7 +36,6 @@ export default function LeftNav() {
     })
   )
   const eventStyleGetter = (event) => {
-    console.log("eventStyleGetter:", event);
     var backgroundColor = event.color;
     var style = {
       backgroundColor: backgroundColor,
