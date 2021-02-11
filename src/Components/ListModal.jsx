@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
 import Rodal from 'rodal'
-
 import 'rodal/lib/rodal.css';
 import ListForm from './ListForm';
 

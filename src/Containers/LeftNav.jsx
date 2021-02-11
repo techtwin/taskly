@@ -43,7 +43,9 @@ export default function LeftNav() {
     var style = {
       backgroundColor: backgroundColor,
       borderRadius: '20px',
-      color: 'black',
+      color: 'white',
+      fontWeight: "600",
+      textAlign: "center",
       border: '1px solid #7e7d7d',
       display: 'block'
     };
