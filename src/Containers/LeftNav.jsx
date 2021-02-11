@@ -12,15 +12,14 @@ const localizer = momentLocalizer(moment)
 export default function LeftNav() {
 
   const tasks = useSelector(({ tasks }) => tasks.tasks)
-  console.log("In leftnav:", tasks)
   const dispatch = useDispatch()
 
   useEffect(() => {
     dispatch(fetchAllTasks())
   }, [dispatch])
 
-  const allTasks = () => {
-    return tasks.map(task => {
+  const allTasks = () => (
+    tasks.map(task => {
       if (task.completed) {
         return null
       } else {
@@ -29,11 +28,27 @@ export default function LeftNav() {
           start: moment(task.date),
           end: moment(task.date),
           allDay: true,
-          resourceId: 10,
-          tooltipAccessor: task.name
+          resourceId: task.id,
+          tooltipAccessor: task.name,
+          color: task.list.color
         }
       }
     })
+  )
+  const eventStyleGetter = (event) => {
+    var backgroundColor = event.color;
+    var style = {
+      backgroundColor: backgroundColor,
+      borderRadius: '20px',
+      color: 'white',
+      fontWeight: "600",
+      textAlign: "center",
+      border: '1px solid #7e7d7d',
+      display: 'block'
+    };
+    return {
+      style: style
+    };
   }
 
   return (
@@ -41,11 +56,14 @@ export default function LeftNav() {
       <img style={{ marginTop: "10px", marginLeft: "40px", marginBottom: "50px" }} src="./Logo.png" alt="logo" />
       <Calendar
         localizer={localizer}
-        events={allTasks()}
         startAccessor="start"
         endAccessor="end"
         defaultDate={new Date()}
-        style={{ margin: "4%", height: 700}}
+        events={allTasks()}
+        eventPropGetter={eventStyleGetter}
+        views={['month', 'day', 'week']}
+        drilldownView="week"
+        style={{ margin: "5%", height: 700, boxShadow: "15px 25px #e5e6eb5e" }}
       />
     </div>
   )

@@ -18,6 +18,7 @@ export default function EditTaskModal({ taskObj, lists }) {
   return (
     <>
       <button
+        className="editBtn"
         style={{
         backgroundColor: "transparent",
         border: "none",

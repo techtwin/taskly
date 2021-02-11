@@ -41,6 +41,7 @@ export default function ListForm({  hide }) {
           padding: "10px",
           width: "200px",
           fontSize: "20px",
+          fontWeight: 800
         }}>Submit</button>
       </form>
     </div>

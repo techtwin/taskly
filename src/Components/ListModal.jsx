@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
 import Rodal from 'rodal'
-
 import 'rodal/lib/rodal.css';
 import ListForm from './ListForm';
 
@@ -49,13 +48,13 @@ export default function ListModal({ currentUser }) {
         showCloseButton={false}
       >
         <div className="list-img">
-          <img src="./List.jpg" alt="list pic" style={{
+          <img src="./list-img.jpg" alt="list pic" style={{
             objectFit: "contain",
             width: "300px",
             textAlign: "left",
             marginLeft: "20px",
             marginRight: "40px",
-            marginTop: "20px",
+            marginTop: "50px",
             borderRadius: "20px"
           }} />
         </div>

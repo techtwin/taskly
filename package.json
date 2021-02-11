@@ -3,6 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@fullcalendar/daygrid": "^5.5.0",
+    "@fullcalendar/react": "^5.5.0",
     "@reduxjs/toolkit": "^1.5.0",
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
@@ -10,6 +12,7 @@
     "moment": "^2.29.1",
     "react": "^17.0.1",
     "react-big-calendar": "^0.31.0",
+    "react-confirm-alert": "^2.7.0",
     "react-dom": "^17.0.1",
     "react-images-upload": "^1.2.8",
     "react-inline-editing": "^1.0.10",
