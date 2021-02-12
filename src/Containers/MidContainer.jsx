@@ -35,7 +35,7 @@ export default function MidContainer() {
       taskObj={task}
     />
   ))
-
+  
   return (
     <div className="middleCont">
       <ListModal currentUser={currentUser}/>
@@ -43,7 +43,7 @@ export default function MidContainer() {
       <div className="cardContainer">
         {allTasks.length === 0 ?
           <>
-            <h1 style={{ color: "red", fontWeight: 800, padding: "100px", marginLeft: "60px", marginTop: "-100px" }}>
+            <h1 style={{ color: "#000000", fontWeight: 800, padding: "100px", marginLeft: "60px", marginTop: "-100px" }}>
               You currently have no tasks available. Please create one to begin !
             </h1>
             <img style={{ transform: "scale(0.8)", marginBottom: "200px", marginLeft: "60px" }}src="./time-management.gif" alt="gif img"/>
