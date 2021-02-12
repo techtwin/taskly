@@ -49,14 +49,18 @@ export default function RightNav() {
           </div>
           <ProfileModal />
           <button className="logoutBtn" onClick={logout}>Logout</button>
-          <div className="addFriendDiv">
-            <h1 className="addFriendH1">Received Requests</h1>
+          <div className="friendRequestsDiv">
+            <h1 className="friendRequestsH1">Received Requests</h1>
             {currentUser.requests_received.map(friend => (
               <div style={{ display: "flex", justifyContent: "center" }}>
                 <h4 style={{ display: "inline-block", marginTop: "50px", marginLeft: "20px"}}>{friend.name}</h4>
                 <img style={{ objectFit: "contain", transform: "scale(0.3)", borderRadius: "46px" }} src={friend.img} alt="friend img"/>
               </div>
             ))}
+          </div>
+          <div className="addFriendDiv">
+            <h1 className="addFriendH1">Add Friend</h1>
+            <button><img src="./add-btn2.png" alt="add friend button"/></button>
           </div>
           <div className="githubDiv">
             <h1 className="githubTitle">Checkout my Github here.</h1>

@@ -87,7 +87,7 @@
   transform: scale(0.8);
 }
 
-.addFriendDiv {
+.friendRequestsDiv {
   background-color: #f6f7fb93;
   border-radius: 20px;
   width: 40%;
@@ -96,12 +96,39 @@
   margin-left: 100px;
   padding-top: 5px;
   text-align: center;
+  box-shadow: 15px 25px #e5e6eb5e;
 }
 
-.addFriendH1 {
+.friendRequestsH1 {
   font-family: Gilroy-Medium;
   font-size: 25px;
   font-weight: 400;
+}
+
+.addFriendDiv {
+  background-color: #f6f7fb93;
+  border-radius: 20px;
+  width: 40%;
+  /* height: 50%; */
+  margin-top: 50px;
+  margin-left: 100px;
+  padding-top: 20px;
+  text-align: center;
+  box-shadow: 15px 25px #e5e6eb5e;
+}
+
+.addFriendH1 {
+  left: 35px;
+  font-family: Gilroy-Medium;
+  font-size: 40px;
+  font-weight: 400;
+  top: 30px;
+}
+
+.addFriendDiv button {
+  all: unset;
+  cursor: pointer;
+  transform: scale(0.7);
 }
 
 .friendsDiv {

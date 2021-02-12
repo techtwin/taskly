@@ -37,14 +37,14 @@ export default function Signup() {
     <>
       <form onSubmit={submitHandler}>
         <h1>Sign Up</h1>
-        <input type="text" value={state.username} name="username" onChange={changeHandler} placeholder="Username" />
-        <input type="text" value={state.name} name="name" onChange={changeHandler} placeholder="Name" />
-        <input type="password" value={state.password} name="password" onChange={changeHandler} placeholder="Password" />
+        <input required type="text" value={state.username} name="username" onChange={changeHandler} placeholder="Username" />
+        <input required type="text" value={state.name} name="name" onChange={changeHandler} placeholder="Name" />
+        <input required type="password" value={state.password} name="password" onChange={changeHandler} placeholder="Password" />
         <br /><br />
         <div className="imageHolder">
           <img src={img} alt="" className="img"/>
         </div>
-        <input id="files" type="file" name="img" accept="image/*" onChange={handlefileChange} />
+        <input required id="files" type="file" name="img" accept="image/*" onChange={handlefileChange} />
         <div className="label">
           <label style={{ display: "inline-block", marginTop: "40px"}} className="image-upload" htmlFor="files">Upload image</label><br />
         </div>
