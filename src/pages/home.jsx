@@ -7,6 +7,7 @@ export default function Home() {
   return (
     <>
       <div className="userForms">
+        <img className="homepgLogo" src="./Logo.png" alt="logo img"/>
         <Login />
         <div className="formHr">
           <hr />

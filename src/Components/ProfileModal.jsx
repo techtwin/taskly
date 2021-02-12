@@ -25,7 +25,7 @@ export default function ProfileModal() {
         visible={visible} 
         onClose={hide} 
         animation="door" 
-        showCloseButton={false}
+        showCloseButton={true}
       >
         <Profile hide={hide} />
       </Rodal>

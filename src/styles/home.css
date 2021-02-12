@@ -10,8 +10,8 @@
   background-color: #f6f7fb93;
   box-shadow: 25px 30px #e5e6eb5e;
   border-radius: 20px;
-  padding: 100px;
-  width: 900px;
+  padding: 60px;
+  width: 1400px;
 }
 
 .userForms button {
@@ -53,7 +53,7 @@
 .img {
   width: 150px;
   height: 150px;
-  object-fit: contain;
+  object-fit: cover;
 }
 
 input[type="file"] {
@@ -81,4 +81,9 @@ input[type="file"] {
 
 .image-upload:active {
   transform: scale(0.9);
+}
+
+.homepgLogo {
+  display: flex;
+  justify-content: flex-start;
 }
