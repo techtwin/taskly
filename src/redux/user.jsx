@@ -16,11 +16,14 @@ const userSlice = createSlice({
     },
     setCurrentUser: (state, action) => {
       state.currentUser = action.payload
+    },
+    updateUser: (state, action) => {
+      state.currentUser = action.payload
     }
   }
 })
 
-export const { logIn, signUp, logOut, setCurrentUser } = userSlice.actions
+export const { logIn, signUp, logOut, setCurrentUser, updateUser } = userSlice.actions
 
 export const login = (userObj) => {
   return function (dispatch) {
@@ -40,22 +43,22 @@ export const login = (userObj) => {
         } else {
           window.alert("Please try again. Incorrect username or password.")
         }
-        // dispatch(setCurrentUser(data.user))
-        // localStorage.setItem("token", data.token)
     })
   }
 }
 
 export const checkLogin = (token) => {
   return function (dispatch) {
-    fetch(`${url}/profile`, {
+    fetch(`${url}profile`, {
       method: "GET",
       headers: {
         "Authorization": `Bearer ${token}`
       }
     })
       .then(r => r.json())
-      .then(data => dispatch(setCurrentUser(data)))
+      .then(data => {
+        dispatch(setCurrentUser(data))
+      })
   }
 }
 
@@ -88,7 +91,23 @@ export const signup = (userObj) => {
   }
 }
 
-
+export const editProfile = (userId, name) => {
+  return function (dispatch) {
+    fetch(`${url}users/${userId}`, {
+      method: "PATCH",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(name)
+    })
+      .then(r => r.json())
+      .then(updatedUser => {
+        console.log(updatedUser)
+        const action = updateUser(updatedUser)
+        dispatch(action)
+      })
+  }
+}
 
 
 

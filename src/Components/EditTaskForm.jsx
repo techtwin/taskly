@@ -28,6 +28,7 @@ export default function EditTaskForm({ hide, lists, taskObj }) {
     console.log("lists click handler:", e)
     setState({ list_id: e.value })
   }
+  
   return (
     <div className="taskForm">
       <form onSubmit={submitHandler}>

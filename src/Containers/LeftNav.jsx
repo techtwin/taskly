@@ -6,7 +6,7 @@ import moment from 'moment'
 import "react-big-calendar/lib/css/react-big-calendar.css"
 import '../styles/leftnav.css'
 
-moment.locale("en-US")
+moment.locale("en")
 const localizer = momentLocalizer(moment)
 
 export default function LeftNav() {
