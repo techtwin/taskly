@@ -69,8 +69,8 @@ export const createNewTask = (task) => {
       .then(r => r.json())
       .then(data => {
         const action = createTask(data)
+        // dispatch(emptyArr)
         dispatch(action)
-        dispatch(emptyArr)
         console.log(data)
       })
   }

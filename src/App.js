@@ -4,6 +4,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { Switch, Route, Redirect, useHistory } from "react-router-dom";
 import { Home, Dashboard } from "./pages";
 import { checkLogin } from "./redux/user";
+import Loading from "./Components/Loading";
 
 function App() {
   const currentUser = useSelector(({ currentUser }) => currentUser.currentUser);
@@ -18,6 +19,7 @@ function App() {
       dispatch(checkLogin(token));
     } else {
       history.push("/");
+      <Loading />;
     }
   }, []);
 
