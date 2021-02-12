@@ -31,7 +31,7 @@ export default function Profile({ hide }) {
           <hr className="profileHr" />
           <img src={currentUser.img} alt="user avatar" />
           <br />
-          <button type="button">Change image</button>
+          <button style={{ marginBottom: "30px"}} type="button">Change image</button>
           <EditableLabel
             text={currentUser.name}
             inputWidth='140px'
@@ -39,7 +39,7 @@ export default function Profile({ hide }) {
             labelFontWeight='bold'
             labelFontSize="25px"
             onFocusOut={editedName}
-          />
+          /><br /><br /><br />
           <button type="submit" className="profileSaveBtn">Save Changes</button>
           <button type="button" className="profileCancelBtn" onClick={hide}>Cancel</button>
         </form>
