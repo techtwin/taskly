@@ -104,6 +104,11 @@
   font-weight: 400;
 }
 
+.friendsDiv {
+  height: 820px;
+  overflow-y: auto;
+}
+
 /*********************** Profile Page ************************/
 .profilePg {
   display: flex;

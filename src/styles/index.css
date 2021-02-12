@@ -66,3 +66,9 @@ textarea {
   border-radius: 0.28571429rem;
   box-shadow: 0 0 0 0 transparent inset;
 }
+
+.loading {
+  /* display: flex; */
+  margin-top: 400px;
+  margin-left: 700px;
+}

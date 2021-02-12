@@ -37,7 +37,7 @@ export default function Profile({ hide }) {
             inputWidth='140px'
             inputHeight='10px'
             labelFontWeight='bold'
-            labelFontSize="25px"
+            labelFontSize="28px"
             onFocusOut={editedName}
           /><br /><br /><br />
           <button type="submit" className="profileSaveBtn">Save Changes</button>

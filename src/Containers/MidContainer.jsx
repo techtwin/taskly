@@ -7,6 +7,7 @@ import { fetchAllTasks } from '../redux/task'
 import { fetchAllLists } from '../redux/list'
 import ListModal from '../Components/ListModal'
 import TaskModal from '../Components/TaskModal'
+import Loading from '../Components/Loading'
 
 export default function MidContainer() {
 
@@ -24,7 +25,8 @@ export default function MidContainer() {
       dispatch(fetchAllLists(currentUser.id))
       dispatch(fetchAllTasks(currentUser.id))
     } else {
-      <p>I'm Loading...</p>
+      // <p>I'm Loading...</p>
+      <Loading />
     }
   }, [dispatch])
 
@@ -46,7 +48,7 @@ export default function MidContainer() {
             <h1 style={{ color: "#000000", fontWeight: 800, padding: "90px", marginLeft: "30px", marginTop: "-70px" }}>
               You currently have no tasks available. Please create one to begin !
             </h1>
-            <img style={{ transform: "scale(0.8)", marginBottom: "200px", marginLeft: "30px" }}src="./time-management.gif" alt="gif img"/>
+            <img style={{ transform: "scale(0.8)", marginBottom: "200px", marginLeft: "30px" }} src="./time-management.gif" alt="gif img"/>
           </>
           :
           allTasks

@@ -6,6 +6,7 @@ import { logOut } from '../redux/user'
 import { confirmAlert } from 'react-confirm-alert'
 import 'react-confirm-alert/src/react-confirm-alert.css'
 import ProfileModal from '../Components/ProfileModal'
+import Loading from '../Components/Loading'
 
 export default function RightNav() {
 
@@ -86,7 +87,7 @@ export default function RightNav() {
             }}>
               Friends
             </h1>
-            {/* <> */}
+            <div className="friendsDiv">
               {currentUser.requests_sent.map(friend => (
                 <div key={friend.id} style={{ alignItems: "center", marginBottom: "20px", paddingLeft: "10px", paddingRight: "10px"}}>
                   <br />
@@ -94,11 +95,13 @@ export default function RightNav() {
                   <img style={{ transform: "scale(0.8)", borderRadius: "46px" }} src={friend.img} alt="friends"></img>
                 </div>
               ))}
-            {/* </> */}
+            </div>
           </div>
         </>
         : 
-        <p>Im loading...</p>}
+        // <p>I'm Loading...</p>
+        <Loading />
+      }
     </div>
   )
 }

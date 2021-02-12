@@ -6,8 +6,8 @@
 }
 
 .cardContainer {
-  height: 65%;
-  overflow-y: scroll;
+  height: 820px;
+  overflow-y: auto;
 }
 
 .modalSubmitBtn:focus {
