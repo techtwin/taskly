@@ -93,9 +93,9 @@ export default function RightNav() {
             </h1>
             <div className="friendsDiv">
               {currentUser.requests_sent.map(friend => (
-                <div key={friend.id} style={{ alignItems: "center", marginBottom: "20px", paddingLeft: "10px", paddingRight: "10px"}}>
+                <div key={friend.id} style={{ alignItems: "center", marginBottom: "20px", paddingLeft: "10px", paddingRight: "10px" }}>
                   <br />
-                  <h2 style={{ marginTop: "30px", fontSize: "22px", fontWeight: "800"}}>{friend.name}</h2>
+                  <h2 style={{ marginTop: "30px", fontSize: "22px", fontWeight: "800" }}>{friend.name}</h2>
                   <img style={{ transform: "scale(0.8)", borderRadius: "46px" }} src={friend.img} alt="friends"></img>
                 </div>
               ))}

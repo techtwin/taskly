@@ -6,7 +6,7 @@ export default function Signup() {
 
   const [state, setState] = useState({ username: "", name: "", password: "", img: './default-profile.png' })
   const dispatch = useDispatch()
-  const {img} = state
+  const { img, password, name, username } = state
 
   const changeHandler = e => {
     const key = e.target.name
@@ -37,9 +37,9 @@ export default function Signup() {
     <>
       <form onSubmit={submitHandler}>
         <h1>Sign Up</h1>
-        <input required type="text" value={state.username} name="username" onChange={changeHandler} placeholder="Username" />
-        <input required type="text" value={state.name} name="name" onChange={changeHandler} placeholder="Name" />
-        <input required type="password" value={state.password} name="password" onChange={changeHandler} placeholder="Password" />
+        <input required type="text" value={username} name="username" onChange={changeHandler} placeholder="Username" />
+        <input required type="text" value={name} name="name" onChange={changeHandler} placeholder="Name" />
+        <input required type="password" value={password} name="password" onChange={changeHandler} placeholder="Password" />
         <br /><br />
         <div className="imageHolder">
           <img src={img} alt="" className="img"/>

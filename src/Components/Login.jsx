@@ -4,6 +4,7 @@ import { login } from '../redux/user';
 
 export default function Login() {
   const [state, setState] = useState({ username: "", password: "" })
+  const { username, password } = state
   const dispatch = useDispatch()
 
   const changeHandler = e => {
@@ -21,8 +22,8 @@ export default function Login() {
     <>
       <form onSubmit={submitHandler}>
         <h1>Log In</h1>
-        <input required type="text" value={state.username} name="username" onChange={changeHandler} placeholder="Username" />
-        <input required type="password" value={state.password} name="password" onChange={changeHandler} placeholder="Password" />
+        <input required type="text" value={username} name="username" onChange={changeHandler} placeholder="Username" />
+        <input required type="password" value={password} name="password" onChange={changeHandler} placeholder="Password" />
         <br />
         <button style={{ marginTop: "40px"}}>Log In</button>
       </form>

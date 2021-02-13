@@ -53,7 +53,7 @@ export default function LeftNav() {
 
   return (
     <div className="leftCont">
-      <img style={{ marginTop: "10px", marginLeft: "40px", marginBottom: "50px" }} src="./Logo.png" alt="logo" />
+      <img style={{ marginTop: "15px", marginLeft: "40px", marginBottom: "50px" }} src="./Logo.png" alt="logo" />
       <Calendar
         localizer={localizer}
         startAccessor="start"

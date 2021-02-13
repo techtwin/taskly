@@ -5,7 +5,10 @@ import Select from 'react-select'
 
 export default function EditTaskForm({ hide, lists, taskObj }) {
   
-  const [state, setState] = useState({ name: taskObj.name, description: taskObj.description, date: taskObj.date, time: taskObj.time, list_id: null })
+  const { name, description, date, time, list } = taskObj
+
+  const [state, setState] = useState({ name: name, description: description, date: date, time: time, list_id: list.id })
+
   const dispatch = useDispatch()
 
   const submitHandler = e => {

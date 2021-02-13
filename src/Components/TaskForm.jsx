@@ -6,6 +6,7 @@ import Select from 'react-select'
 export default function TaskForm({ lists, hide }) {
 
   const [state, setState] = useState({ name: "", description: "", date: "", time: "", list_id: null })
+  const { name, date, time, description } = state
   const dispatch = useDispatch()
 
   const submitHandler = e => {
@@ -35,13 +36,13 @@ export default function TaskForm({ lists, hide }) {
         <h1>Choose List</h1>
         <Select options={options} onChange={listClickHandler}/>
         <h1>Name</h1>
-        <input type="text" name="name" value={state.name} onChange={changeHandler} placeholder="Name"></input><br /><br />
+        <input type="text" name="name" value={name} onChange={changeHandler} placeholder="Name"></input><br /><br />
         <h1>Date</h1>
-        <input type="date" name="date" value={state.date} onChange={changeHandler} placeholder="Date"></input><br /><br />
+        <input type="date" name="date" value={date} onChange={changeHandler} placeholder="Date"></input><br /><br />
         <h1>Time</h1>
-        <input type="time" name="time" value={state.time} onChange={changeHandler} placeholder="Time"></input><br /><br />
+        <input type="time" name="time" value={time} onChange={changeHandler} placeholder="Time"></input><br /><br />
         <h1>Description</h1>
-        <textarea type="text" name="description" value={state.description} onChange={changeHandler} placeholder="Description"></textarea><br /><br />
+        <textarea type="text" name="description" value={description} onChange={changeHandler} placeholder="Description"></textarea><br /><br />
         <button
           onClick={hide}
           className="modalSubmitBtn"
