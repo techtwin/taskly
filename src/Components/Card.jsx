@@ -91,7 +91,7 @@ export default function Card({ lists, taskObj }) {
               <span>{date}</span> - <span>{time}</span><br /><br />
               <div className="listTypeDiv">
                 <h2
-                  style={{ backgroundColor: `${list.color}` }}
+                  style={{ paddingTop: "5px", backgroundColor: `${list.color}` }}
                 >
                   {list.name}
                 </h2>
