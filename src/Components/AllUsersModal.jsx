@@ -22,16 +22,16 @@ export default function AllUsersModal() {
     dispatch(removeFriend(currentUser.id, e.target.id))
   }
   
-  const alreadyFriends = (e) => {
-    if (currentUser.requests_sent && currentUser.requests_received){
+  const alreadyFriends = (id) => {
+    if (currentUser.requests_sent){
       let arr = currentUser.requests_sent.map(user => user.id)
-      let arr2 = currentUser.requests_received.map(user => user.id)
+      // let arr2 = currentUser.requests_received.map(user => user.id)
       return (
-        arr.includes(e.target.id),
-        arr2.includes(e.target.id)
+        arr.includes(id)
+        // arr2.includes(id)
       )
     }
-}
+  }
 
   const usersMap = allUsers.map(user => (
     <div style={{ width: "100%", marginTop: "10px" }} className="allUsersDiv" key={user.id}>
@@ -39,15 +39,15 @@ export default function AllUsersModal() {
         <h4 style={{ display: "inline-block", marginTop: "50px", marginLeft: "20px" }}>{user.name}</h4>
         <img style={{ width: "110px", height: "110px", objectFit: "contain", transform: "scale(0.3)", borderRadius: "46px" }} src={user.img} alt="user img" /><br />
       </div>
-      {user.id !== currentUser.id && alreadyFriends
+      {user.id !== currentUser.id && !alreadyFriends(user.id)
         ?
         <button id={user.id} className="addFriendBtn" onClick={addFriend}>Add</button>
         :
         null
       }
-      {user.id !== currentUser.id && alreadyFriends
+      {user.id !== currentUser.id && alreadyFriends(user.id)
         ?
-        <button id={user.id} onClick={unFriend} className="addFriendBtn">Delete</button>
+        <button style={{ backgroundColor: "black", color: "white", fontWeight: 800 }} id={user.id} onClick={unFriend} className="addFriendBtn">Delete</button>
         :
         null
       }

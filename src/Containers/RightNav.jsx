@@ -92,13 +92,13 @@ export default function RightNav() {
                   <img style={{ width: "110px", height: "110px", objectFit: "contain", transform: "scale(0.8)", borderRadius: "46px" }} src={friend.img} alt="friends"></img>
                 </div>
               ))}
-              {currentUser.requests_received.map(friend => (
+              {/* {currentUser.requests_received.map(friend => (
                 <div key={friend.id} style={{ alignItems: "center", marginBottom: "20px", paddingLeft: "10px", paddingRight: "10px" }}>
                   <br />
                   <h2 style={{ marginTop: "30px", fontSize: "22px", fontWeight: 500 }}>{friend.name}</h2>
                   <img style={{ width: "110px", height: "110px", objectFit: "contain", transform: "scale(0.8)", borderRadius: "46px" }} src={friend.img} alt="friends"></img>
                 </div>
-              ))}
+              ))} */}
             </div>
           </div>
         </>
