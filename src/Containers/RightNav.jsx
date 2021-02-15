@@ -24,13 +24,6 @@ export default function RightNav({ user }) {
     history.push("/")
   }
 
-  // const testClick = () => {
-  //   dispatch(newFriend({ 
-  //     requestor_id: currentUser.id,
-  //     receiver_id: 5
-  //   }))
-  // }
-
   const logout = ({ onClose }) => {
     confirmAlert({
       title: 'Confirm to logout',
@@ -106,7 +99,7 @@ export default function RightNav({ user }) {
                 <div key={friend.id} style={{ alignItems: "center", marginBottom: "20px", paddingLeft: "10px", paddingRight: "10px" }}>
                   <br />
                   <h2 style={{ marginTop: "30px", fontSize: "22px", fontWeight: "800" }}>{friend.name}</h2>
-                  <img style={{ width: "110px", height: "110px", transform: "scale(0.8)", borderRadius: "46px" }} src={friend.img} alt="friends"></img>
+                  <img style={{ width: "110px", height: "110px", objectFit: "contain", transform: "scale(0.8)", borderRadius: "46px" }} src={friend.img} alt="friends"></img>
                 </div>
               ))}
             </div>

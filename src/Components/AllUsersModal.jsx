@@ -18,19 +18,20 @@ export default function AllUsersModal() {
     setVisible(false)
   }
 
-  const testClick = (e) => {
-    console.log(e.target.value)
+  const addFriend = (e) => {
+    console.dir(e.target.id)
+    e.preventDefault()
     dispatch(newFriend({ 
       requestor_id: currentUser.id,
-      receiver_id: 5
+      receiver_id: e.target.id
     }))
   }
 
   const usersMap = allUsers.map(user => (
     <div style={{ paddingTop: "40px" }} className="allUsersDiv" key={user.id}>
-      <img style={{ width: "120px", height: "120px" }} src={user.img} alt="user img" /><br />
+      <img style={{ width: "120px", height: "120px", objectFit: "contain" }} src={user.img} alt="user img" /><br />
       <h1 style={{ display: "inline-block" }}>{user.name}</h1>
-      <button onClick={testClick}><img src="./add-btn2.png" alt="add friend button" /></button>
+      <button onClick={addFriend}><img id={user.id} src="./add-btn2.png" alt="add friend button" /></button>
     </div>
   ))
 
