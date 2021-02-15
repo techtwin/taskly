@@ -8,11 +8,9 @@ import Loading from "./Components/Loading";
 
 function App() {
   const currentUser = useSelector(({ currentUser }) => currentUser.currentUser);
-  const allUsers = useSelector(({ currentUser }) => currentUser.users);
   const dispatch = useDispatch();
   const history = useHistory();
 
-  console.log("all users:", allUsers);
   console.log("currentUser:", currentUser);
 
   useEffect(() => {
@@ -29,21 +27,7 @@ function App() {
   return (
     <div className="main">
       <Switch>
-        <Route
-          path={ROUTES.DASHBOARD}
-          render={(routerProps) => {
-            console.log("router props:", routerProps);
-            const id = parseInt(routerProps.match.params.id);
-            let user;
-            if (allUsers.length > 0) {
-              user = allUsers.filter((user) => user.id === id);
-              return <Dashboard user={user} />;
-            } else {
-              <Loading />;
-            }
-          }}
-          // component={Dashboard}
-        />
+        <Route path={ROUTES.DASHBOARD} component={Dashboard} />
         <Route path={ROUTES.HOME} component={Home} />
       </Switch>
       {currentUser ? (

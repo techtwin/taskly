@@ -9,9 +9,8 @@ import ProfileModal from '../Components/ProfileModal'
 import Loading from '../Components/Loading'
 import AllUsersModal from '../Components/AllUsersModal'
 
-export default function RightNav({ user }) {
+export default function RightNav() {
 
-  console.log("user prop:", user)
   const currentUser = useSelector(({ currentUser }) => currentUser.currentUser)
 
   console.log("Current user in right nav:", currentUser)
