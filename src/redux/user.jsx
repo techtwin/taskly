@@ -168,12 +168,9 @@ export const newFriend = (friendObj) => {
 export const removeFriend = (requestorId, receiverId) => {
   return function (dispatch) {
     fetch(`${url}friend_requests/${requestorId}&${receiverId}`, {
-      method: "DELETE",
-      headers: {
-        "Content-Type": "application/json"
-      }
+      method: "DELETE"
     })
-    .then(dispatch(deleteFriend(receiverId)))
+    dispatch(deleteFriend(receiverId))
   }
 }
 

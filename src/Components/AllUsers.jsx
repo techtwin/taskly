@@ -2,14 +2,12 @@ import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { newFriend, removeFriend } from '../redux/user';
 import '../styles/rightnav.css'
-export default function AllUsersModal() {
+export default function AllUsers() {
   const allUsers = useSelector(({ currentUser }) => currentUser.users);
   const currentUser = useSelector(({ currentUser }) => currentUser.currentUser)
   const dispatch = useDispatch()
 
   const addFriend = (e) => {
-    console.dir(e.target.id)
-    e.preventDefault()
     dispatch(newFriend({ 
       requestor_id: currentUser.id,
       receiver_id: e.target.id
@@ -17,15 +15,13 @@ export default function AllUsersModal() {
   }
 
   const unFriend = (e) => {
-    e.preventDefault()
-    console.log(e.target.id)
     dispatch(removeFriend(currentUser.id, e.target.id))
   }
   
   const alreadyFriends = (id) => {
     if (currentUser.requests_sent){
       let arr = currentUser.requests_sent.map(user => user.id)
-      // let arr2 = currentUser.requests_received.map(user => user.id)
+      let arr2 = currentUser.requests_received.map(user => user.id)
       return (
         arr.includes(id)
         // arr2.includes(id)
@@ -56,7 +52,7 @@ export default function AllUsersModal() {
   ))
 
   return (
-    <div style={{ height: "400px", overflowY: "auto", paddingLeft: "10px" }}>
+    <div style={{ height: "400px", overflowY: "auto", paddingLeft: "10px", paddingBottom: "30px" }}>
       {usersMap}
     </div>
   )

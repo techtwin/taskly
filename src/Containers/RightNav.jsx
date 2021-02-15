@@ -7,7 +7,7 @@ import { confirmAlert } from 'react-confirm-alert'
 import 'react-confirm-alert/src/react-confirm-alert.css'
 import ProfileModal from '../Components/ProfileModal'
 import Loading from '../Components/Loading'
-import AllUsersModal from '../Components/AllUsersModal'
+import AllUsers from '../Components/AllUsers'
 
 export default function RightNav() {
 
@@ -53,7 +53,7 @@ export default function RightNav() {
           <button className="logoutBtn" onClick={logout}>Logout</button>
           <div className="addFriendDiv">
             <h1 className="addFriendH1">Add Friend</h1>
-            <AllUsersModal />
+            <AllUsers />
           </div>
           <div className="githubDiv">
             <h1 className="githubTitle">Checkout my Github here.</h1>
