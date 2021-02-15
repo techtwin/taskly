@@ -2,14 +2,15 @@ import React from 'react'
 import '../styles/rightnav.css'
 import { useDispatch, useSelector } from 'react-redux'
 import { useHistory } from 'react-router-dom'
-import { logOut } from '../redux/user'
+import { logOut, newFriend } from '../redux/user'
 import { confirmAlert } from 'react-confirm-alert'
 import 'react-confirm-alert/src/react-confirm-alert.css'
 import ProfileModal from '../Components/ProfileModal'
 import Loading from '../Components/Loading'
 
-export default function RightNav() {
+export default function RightNav({ user }) {
 
+  console.log("user prop:", user)
   const currentUser = useSelector(({ currentUser }) => currentUser.currentUser)
   console.log("Current user in right nav:", currentUser)
   const history = useHistory()
@@ -19,6 +20,13 @@ export default function RightNav() {
     localStorage.removeItem("token")
     dispatch(logOut)
     history.push("/")
+  }
+
+  const testClick = () => {
+    dispatch(newFriend({ 
+      requestor_id: currentUser.id,
+      receiver_id: 3
+    }))
   }
 
   const logout = ({ onClose }) => {
@@ -60,7 +68,7 @@ export default function RightNav() {
           </div>
           <div className="addFriendDiv">
             <h1 className="addFriendH1">Add Friend</h1>
-            <button><img src="./add-btn2.png" alt="add friend button"/></button>
+            <button onClick={testClick}><img src="./add-btn2.png" alt="add friend button"/></button>
           </div>
           <div className="githubDiv">
             <h1 className="githubTitle">Checkout my Github here.</h1>

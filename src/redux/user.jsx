@@ -3,7 +3,7 @@ const url = "http://localhost:3000/";
 
 const userSlice = createSlice({
   name: "user",
-  initialState: { currentUser: null },
+  initialState: { currentUser: null, friendRequests: [], users: [] },
   reducers: {
     logIn: (state, action) => {
       state.currentUser = action.payload
@@ -19,11 +19,17 @@ const userSlice = createSlice({
     },
     updateUser: (state, action) => {
       state.currentUser = action.payload
+    },
+    fetchAllUsers: (state, action) => {
+      state.users = action.payload
+    },
+    addFriend: (state, action) => {
+      state.friendRequests = [action.payload, ...state.friendRequests]
     }
   }
 })
 
-export const { logIn, signUp, logOut, setCurrentUser, updateUser } = userSlice.actions
+export const { logIn, signUp, logOut, setCurrentUser, updateUser, fetchAllUsers, addFriend } = userSlice.actions
 
 export const login = (userObj) => {
   return function (dispatch) {
@@ -109,6 +115,41 @@ export const editProfile = (userId, name) => {
   }
 }
 
+export const getAllUsers = () => {
+  return function (dispatch) {
+    const token = localStorage.getItem("token")
+    fetch(`${url}users`, {
+      headers: {
+        // "Content-Type": "application/json"
+        "Authorization": `Bearer ${token}`
+      },
+    })
+      .then((r) => r.json())
+      .then((usersArray) => {
+        dispatch(fetchAllUsers(usersArray))
+      }
+      );
+  };
+};
 
+
+// Friend System // 
+
+export const newFriend = (friendObj) => {
+  return function (dispatch) {
+    fetch(`${url}friend_requests`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(friendObj)
+    })
+      .then(r => r.json())
+      .then(newFriend => {
+        console.log("new friend:", newFriend.friendrequest.receiver)
+        dispatch(addFriend(newFriend))
+    })
+  }
+}
 
 export default userSlice.reducer
