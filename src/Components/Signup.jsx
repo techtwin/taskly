@@ -25,11 +25,9 @@ export default function Signup() {
     reader.onload = () => {
       if (reader.readyState === 2) {
         setState({ ...state, img: reader.result })
-        // setState({ ...state, [e.target.name]: reader.result })
       }
     }
     reader.readAsDataURL(e.target.files[0])
-    // setState({ ...state, [e.target.name]: e.target.files[0] })
   }
 
 

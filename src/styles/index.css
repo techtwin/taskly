@@ -9,12 +9,12 @@ body {
     "Helvetica Neue", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  overflow: auto;
+  /* overflow: auto; */
 }
 
 html {
   scroll-behavior: smooth;
-  /* overflow: hidden; */
+  overflow: hidden;
 }
 
 body,

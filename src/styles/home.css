@@ -69,7 +69,9 @@ input[type="file"] {
 
 .image-upload {
   margin: auto;
-  padding: 5px 10px;
+  padding: 0px 10px;
+  padding-top: 10px;
+  padding-bottom: 5px;
   margin-bottom: 20px;
   color: white;
   border-radius: 10px;

@@ -15,7 +15,7 @@
 }
 
 .modalSubmitBtn:active {
-  transform: scale(0.8);
+  transform: scale(0.95);
 }
 
 .listModalBtn:focus {
@@ -23,7 +23,7 @@
 }
 
 .listModalBtn:active {
-  transform: scale(0.8);
+  transform: scale(0.95);
 }
 
 ::-webkit-scrollbar {
@@ -42,5 +42,5 @@
 }
 
 .addTaskBtn:active {
-  transform: scale(0.8);
+  transform: scale(0.95);
 }
