@@ -25,11 +25,24 @@ const userSlice = createSlice({
     },
     addFriend: (state, action) => {
       state.friendRequests = [action.payload, ...state.friendRequests]
+    },
+    deleteFriend: (state, action) => {
+      const newArr = [...state.friendRequests]
+      state.friendRequests = newArr.filter((friend) => friend.id !== action.payload)
     }
   }
 })
 
-export const { logIn, signUp, logOut, setCurrentUser, updateUser, fetchAllUsers, addFriend } = userSlice.actions
+export const {
+  logIn,
+  signUp, 
+  logOut, 
+  setCurrentUser, 
+  updateUser, 
+  fetchAllUsers, 
+  addFriend, 
+  deleteFriend
+} = userSlice.actions
 
 export const login = (userObj) => {
   return function (dispatch) {
@@ -149,6 +162,18 @@ export const newFriend = (friendObj) => {
         console.log("new friend:", newFriend.friendrequest.receiver)
         dispatch(addFriend(newFriend))
     })
+  }
+}
+
+export const removeFriend = (requestorId, receiverId) => {
+  return function (dispatch) {
+    fetch(`${url}friend_requests/${requestorId}&${receiverId}`, {
+      method: "DELETE",
+      headers: {
+        "Content-Type": "application/json"
+      }
+    })
+    .then(dispatch(deleteFriend(receiverId)))
   }
 }
 
