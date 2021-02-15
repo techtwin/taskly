@@ -71,6 +71,10 @@
   cursor: pointer;
 }
 
+.gitmanBtn:active {
+  transform: scale(0.4);
+}
+
 .logoutBtn {
   cursor: pointer;
   border-radius: 20px;
@@ -136,6 +140,7 @@
   cursor: pointer;
   transform: scale(0.7);
 }
+
 .addFriendDiv button:active {
   transform: scale(0.5);
 }
