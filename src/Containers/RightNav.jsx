@@ -2,16 +2,18 @@ import React from 'react'
 import '../styles/rightnav.css'
 import { useDispatch, useSelector } from 'react-redux'
 import { useHistory } from 'react-router-dom'
-import { logOut, newFriend } from '../redux/user'
+import { logOut } from '../redux/user'
 import { confirmAlert } from 'react-confirm-alert'
 import 'react-confirm-alert/src/react-confirm-alert.css'
 import ProfileModal from '../Components/ProfileModal'
 import Loading from '../Components/Loading'
+import AllUsersModal from '../Components/AllUsersModal'
 
 export default function RightNav({ user }) {
 
   console.log("user prop:", user)
   const currentUser = useSelector(({ currentUser }) => currentUser.currentUser)
+
   console.log("Current user in right nav:", currentUser)
   const history = useHistory()
   const dispatch = useDispatch()
@@ -22,12 +24,12 @@ export default function RightNav({ user }) {
     history.push("/")
   }
 
-  const testClick = () => {
-    dispatch(newFriend({ 
-      requestor_id: currentUser.id,
-      receiver_id: 3
-    }))
-  }
+  // const testClick = () => {
+  //   dispatch(newFriend({ 
+  //     requestor_id: currentUser.id,
+  //     receiver_id: 5
+  //   }))
+  // }
 
   const logout = ({ onClose }) => {
     confirmAlert({
@@ -68,7 +70,7 @@ export default function RightNav({ user }) {
           </div>
           <div className="addFriendDiv">
             <h1 className="addFriendH1">Add Friend</h1>
-            <button onClick={testClick}><img src="./add-btn2.png" alt="add friend button"/></button>
+            <AllUsersModal />
           </div>
           <div className="githubDiv">
             <h1 className="githubTitle">Checkout my Github here.</h1>
@@ -104,7 +106,7 @@ export default function RightNav({ user }) {
                 <div key={friend.id} style={{ alignItems: "center", marginBottom: "20px", paddingLeft: "10px", paddingRight: "10px" }}>
                   <br />
                   <h2 style={{ marginTop: "30px", fontSize: "22px", fontWeight: "800" }}>{friend.name}</h2>
-                  <img style={{ transform: "scale(0.8)", borderRadius: "46px" }} src={friend.img} alt="friends"></img>
+                  <img style={{ width: "110px", height: "110px", transform: "scale(0.8)", borderRadius: "46px" }} src={friend.img} alt="friends"></img>
                 </div>
               ))}
             </div>

@@ -136,6 +136,9 @@
   cursor: pointer;
   transform: scale(0.7);
 }
+.addFriendDiv button:active {
+  transform: scale(0.5);
+}
 
 .friendsDiv {
   height: 820px;
