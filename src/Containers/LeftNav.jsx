@@ -51,9 +51,13 @@ export default function LeftNav() {
     };
   }
 
+  const refreshPage = () => {
+    window.location.reload()
+  }
+
   return (
     <div className="leftCont">
-      <img style={{ marginTop: "15px", marginLeft: "40px", marginBottom: "50px" }} src="./Logo.png" alt="logo" />
+      <img onClick={refreshPage} style={{ cursor: "pointer", marginTop: "15px", marginLeft: "40px", marginBottom: "50px" }} src="./Logo.png" alt="logo" />
       <Calendar
         localizer={localizer}
         startAccessor="start"

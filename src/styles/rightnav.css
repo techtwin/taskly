@@ -26,6 +26,10 @@
   cursor: pointer;
 }
 
+.mySettings:active {
+  transform: scale(0.994);
+}
+
 .userImg {
   object-fit: contain;
   transform: scale(0.7);
