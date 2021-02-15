@@ -17,7 +17,7 @@ export default function ListModal({ currentUser }) {
 
   return (
     <>
-      <h1 style={{ display: "inline-block", marginLeft: "100px" }}>Your Agenda</h1>
+      <h1 style={{ display: "inline-block", marginLeft: "100px", fontWeight: 600 }}>Your Agenda</h1>
       <button
         className="listModalBtn"
         style={{

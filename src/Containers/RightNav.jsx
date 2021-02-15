@@ -53,12 +53,14 @@ export default function RightNav() {
           <button className="logoutBtn" onClick={logout}>Logout</button>
           <div className="friendRequestsDiv">
             <h1 className="friendRequestsH1">Received Requests</h1>
-            {currentUser.requests_received.map(friend => (
-              <div style={{ display: "flex", justifyContent: "center" }}>
-                <h4 style={{ display: "inline-block", marginTop: "50px", marginLeft: "20px"}}>{friend.name}</h4>
-                <img style={{ objectFit: "contain", transform: "scale(0.3)", borderRadius: "46px" }} src={friend.img} alt="friend img"/>
-              </div>
-            ))}
+            <div style={{ height: "180px", overflowY: "auto", paddingLeft: "10px" }}>
+              {currentUser.requests_received.map(friend => (
+                <div style={{ marginTop: "-20px", display: "flex", justifyContent: "space-between" }}>
+                  <h4 style={{ display: "inline-block", marginTop: "50px", marginLeft: "20px", fontWeight: 500 }}>{friend.name}</h4>
+                  <img style={{ width: "110px", height: "110px", objectFit: "contain", transform: "scale(0.3)", borderRadius: "46px" }} src={friend.img} alt="friend img"/>
+                </div>
+              ))}
+            </div>
           </div>
           <div className="addFriendDiv">
             <h1 className="addFriendH1">Add Friend</h1>
@@ -97,7 +99,7 @@ export default function RightNav() {
               {currentUser.requests_sent.map(friend => (
                 <div key={friend.id} style={{ alignItems: "center", marginBottom: "20px", paddingLeft: "10px", paddingRight: "10px" }}>
                   <br />
-                  <h2 style={{ marginTop: "30px", fontSize: "22px", fontWeight: "800" }}>{friend.name}</h2>
+                  <h2 style={{ marginTop: "30px", fontSize: "22px", fontWeight: 500 }}>{friend.name}</h2>
                   <img style={{ width: "110px", height: "110px", objectFit: "contain", transform: "scale(0.8)", borderRadius: "46px" }} src={friend.img} alt="friends"></img>
                 </div>
               ))}
