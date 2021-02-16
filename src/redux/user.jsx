@@ -24,11 +24,11 @@ const userSlice = createSlice({
       state.users = action.payload
     },
     addFriend: (state, action) => {
-      state.friendRequests = [action.payload, ...state.friendRequests]
+      state.currentUser.requests_sent = [...state.currentUser.requests_sent, action.payload]
     },
     deleteFriend: (state, action) => {
-      const newArr = [...state.friendRequests]
-      state.friendRequests = newArr.filter((friend) => friend.id !== action.payload)
+      const newArr = [...state.currentUser.requests_sent]
+      state.currentUser.requests_sent = newArr.filter((friend) => friend.id !== action.payload)
     }
   }
 })
@@ -159,14 +159,11 @@ export const newFriend = (friendObj) => {
     })
       .then(r => r.json())
       .then(newFriend => {
-        console.log("New friend var:", newFriend)
         console.log("new friend:", newFriend.friendrequest.receiver)
-        dispatch(addFriend(newFriend))
+        dispatch(addFriend(newFriend.friendrequest.receiver))
     })
   }
 }
-
-// friend request needs to find it's way to requests sent
 
 export const removeFriend = (requestorId, receiverId) => {
   return function (dispatch) {

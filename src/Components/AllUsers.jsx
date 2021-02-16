@@ -1,9 +1,11 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { newFriend, removeFriend } from '../redux/user';
 import '../styles/rightnav.css'
 import Search from './Search';
-export default function AllUsers() {
+
+export default function AllUsers({ friends }) {
+
   const allUsers = useSelector(({ currentUser }) => currentUser.users);
   const currentUser = useSelector(({ currentUser }) => currentUser.currentUser)
   const [searchValue, setSearchValue] = useState("")
@@ -19,10 +21,10 @@ export default function AllUsers() {
   const unFriend = (e) => {
     dispatch(removeFriend(currentUser.id, e.target.id))
   }
-  
+
   const alreadyFriends = (id) => {
-    if (currentUser.requests_sent){
-      let arr = currentUser.requests_sent.map(user => user.id)
+    if (friends){
+      let arr = friends.map(user => user.id)
       return (
         arr.includes(id)
       )
@@ -35,7 +37,7 @@ export default function AllUsers() {
   }
 
   const filteredUsers = () => {
-    return allUsers.filter(user => ( user.name.toLowerCase().includes(searchValue.toLowerCase())))
+    return allUsers.filter(user => (user.name.toLowerCase().includes(searchValue.toLowerCase())))
   }
 
   const usersMap = filteredUsers().map(user => (

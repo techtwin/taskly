@@ -47,11 +47,6 @@ export default function RightNav() {
     });
   };
 
-/* render friend */
-  // const renderFriends = () => {
-
-  // }
-
   return (
     <div className="rightNav">
       {currentUser
@@ -65,7 +60,7 @@ export default function RightNav() {
           <button className="logoutBtn" onClick={logout}>Logout</button>
           <div className="addFriendDiv">
             <h1 className="addFriendH1">Add Friend</h1>
-            <AllUsers />
+            <AllUsers friends={friends} />
           </div>
           <div className="githubDiv">
             <h1 className="githubTitle">Checkout my Github here.</h1>
@@ -97,8 +92,8 @@ export default function RightNav() {
               Friends
             </h1>
             <div className="friendsDiv">
-              {friends.map(friend => (
-                <div key={friend.id} style={{ alignItems: "center", marginBottom: "20px", paddingLeft: "10px", paddingRight: "10px" }}>
+              {friends.map((friend, index) => (
+                <div key={index} style={{ alignItems: "center", marginBottom: "20px", paddingLeft: "10px", paddingRight: "10px" }}>
                   <br />
                   <h2 style={{ marginTop: "30px", fontSize: "22px", fontWeight: 600 }}>{friend.name}</h2>
                   <img style={{ width: "110px", height: "110px", objectFit: "contain", transform: "scale(0.8)", borderRadius: "46px" }} src={friend.img} alt="friends"></img>
