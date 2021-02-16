@@ -27,7 +27,7 @@ export default function ListModal({ currentUser }) {
           display: "inline-block",
           borderRadius: "20px",
           border: "none",
-          marginLeft: "120px",
+          marginLeft: "220px",
           marginBottom: "50px",
           padding: "10px",
           width: "200px",

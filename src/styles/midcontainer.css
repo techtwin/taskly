@@ -26,15 +26,11 @@
   transform: scale(0.95);
 }
 
-::-webkit-scrollbar {
-  /* display: none; */
-}
-
 .addTaskBtn {
   position: relative;
   cursor: pointer;
   margin-top: -40px;
-  margin-left: 500px;
+  margin-left: 600px;
 }
 
 .addTaskBtn:focus {

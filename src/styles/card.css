@@ -1,10 +1,10 @@
 .card {
   background-color: #f6f7fb93;
   border-radius: 20px;
-  margin: 10px 80px 45px;
-  position: relative;
+  /* margin: 10px 80px 45px; */
   /* top/right/bottom/left */
-  /* margin: 10px 45px 45px; */
+  margin: 10px 40px 50px 85px;
+  position: relative;
   max-height: 100vh;
   box-shadow: 15px 25px #e5e6eb5e;
 }
@@ -74,36 +74,3 @@ input[type="checkbox"] {
   position: relative;
   height: 15px;
 }
-
-/* Animista animations */
-
-/* .slide-in-fwd-center {
-  -webkit-animation: slide-in-fwd-center 3s cubic-bezier(0.25, 0.46, 0.45, 0.94)
-    both;
-  animation: slide-in-fwd-center 3s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
-}
-
-@-webkit-keyframes slide-in-fwd-center {
-  0% {
-    -webkit-transform: translateZ(-1400px);
-    transform: translateZ(-1400px);
-    opacity: 0;
-  }
-  100% {
-    -webkit-transform: translateZ(0);
-    transform: translateZ(0);
-    opacity: 1;
-  }
-}
-@keyframes slide-in-fwd-center {
-  0% {
-    -webkit-transform: translateZ(-1400px);
-    transform: translateZ(-1400px);
-    opacity: 0;
-  }
-  100% {
-    -webkit-transform: translateZ(0);
-    transform: translateZ(0);
-    opacity: 1;
-  }
-} */
