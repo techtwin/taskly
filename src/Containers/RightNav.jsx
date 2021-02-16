@@ -46,7 +46,7 @@ export default function RightNav() {
         ?
         <>
           <div key={currentUser.id} className="accountInfo">
-            <h1>{currentUser.name}</h1>
+            <h1 style={{ marginRight: "10px" }}>{currentUser.name}</h1>
             <img className="userImg" src={currentUser.img} alt="user img"/>
           </div>
           <ProfileModal />

@@ -96,7 +96,7 @@ export default function Card({ lists, taskObj }) {
                   {list.name}
                 </h2>
               </div>
-              <p style={{ paddingRight: "90px"}}>{description}</p><br />
+              <p>{description}</p><br />
             </div>
             <label className="completedMark">
               Completed ?

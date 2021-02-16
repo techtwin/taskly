@@ -17,7 +17,7 @@ export default function ProfileModal() {
 
   return (
     <>
-      <span onClick={show} className="mySettings">My Settings</span>
+      <button onClick={show} className="mySettings">My Settings</button>
       <Rodal
         customStyles={{ borderRadius: "20px", display: "flex" }} 
         height={420}
