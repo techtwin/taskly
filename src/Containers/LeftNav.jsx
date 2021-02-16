@@ -40,6 +40,7 @@ export default function LeftNav() {
     var style = {
       backgroundColor: backgroundColor,
       borderRadius: '20px',
+      paddingTop: "5px",
       color: 'white',
       fontWeight: "600",
       textAlign: "center",

@@ -166,6 +166,10 @@
   opacity: 0.2;
 }
 
+.upArrow {
+  transform: scale(0.5);
+  object-fit: contain;
+}
 /*********************** Profile Page ************************/
 .profilePg {
   display: flex;

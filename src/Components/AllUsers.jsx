@@ -47,6 +47,15 @@ export default function AllUsers() {
         :
         null
       }
+      {user.id === currentUser.id
+        ?
+        <div style={{ display: "flex", justifyContent: "center", marginRight: "20px", marginTop: "-30px" }}>
+          <img className="upArrow" src="./chevron-arrow-up.png" alt="you" />
+          <h1 style={{ display: "inline-block" }}>You</h1>
+        </div>
+        :
+        null
+      }
       <hr className="friendDivHr" />
     </div>
   ))
