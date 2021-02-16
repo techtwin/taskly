@@ -22,7 +22,7 @@ function App() {
       history.push("/");
       <Loading />;
     }
-  }, []);
+  }, [dispatch]);
 
   return (
     <div className="main">

@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { newFriend, removeFriend } from '../redux/user';
 import '../styles/rightnav.css'
@@ -72,7 +72,7 @@ export default function AllUsers() {
     <>
       <Search searchHandler={searchHandler} searchValue={searchValue} />
       <div style={{ height: "400px", overflowY: "auto", paddingLeft: "10px", paddingBottom: "30px" }}>
-      {usersMap}
+        {usersMap}
       </div>
     </>
   )

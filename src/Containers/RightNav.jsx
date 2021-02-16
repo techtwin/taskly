@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import '../styles/rightnav.css'
 import { useDispatch, useSelector } from 'react-redux'
 import { useHistory } from 'react-router-dom'
@@ -11,11 +11,18 @@ import AllUsers from '../Components/AllUsers'
 
 export default function RightNav() {
 
+  const [friends, setFriends] = useState([])
   const currentUser = useSelector(({ currentUser }) => currentUser.currentUser)
 
   console.log("Current user in right nav:", currentUser)
   const history = useHistory()
   const dispatch = useDispatch()
+
+  useEffect(() => {
+    if (currentUser) {
+      setFriends(currentUser.requests_sent)
+    }
+  }, [currentUser])
 
   const handleSignOut = () => {
     localStorage.removeItem("token")
@@ -39,6 +46,11 @@ export default function RightNav() {
       ]
     });
   };
+
+/* render friend */
+  // const renderFriends = () => {
+
+  // }
 
   return (
     <div className="rightNav">
@@ -85,7 +97,7 @@ export default function RightNav() {
               Friends
             </h1>
             <div className="friendsDiv">
-              {currentUser.requests_sent.map(friend => (
+              {friends.map(friend => (
                 <div key={friend.id} style={{ alignItems: "center", marginBottom: "20px", paddingLeft: "10px", paddingRight: "10px" }}>
                   <br />
                   <h2 style={{ marginTop: "30px", fontSize: "22px", fontWeight: 600 }}>{friend.name}</h2>

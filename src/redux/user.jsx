@@ -159,11 +159,14 @@ export const newFriend = (friendObj) => {
     })
       .then(r => r.json())
       .then(newFriend => {
+        console.log("New friend var:", newFriend)
         console.log("new friend:", newFriend.friendrequest.receiver)
         dispatch(addFriend(newFriend))
     })
   }
 }
+
+// friend request needs to find it's way to requests sent
 
 export const removeFriend = (requestorId, receiverId) => {
   return function (dispatch) {
