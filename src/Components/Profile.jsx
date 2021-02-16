@@ -31,7 +31,7 @@ export default function Profile({ hide }) {
           <hr className="profileHr" />
           <img src={currentUser.img} alt="user avatar" />
           <br />
-          <button style={{ marginBottom: "30px"}} type="button">Change image</button>
+          {/* <button style={{ marginBottom: "30px"}} type="button">Change image</button> */}
           <EditableLabel
             text={currentUser.name}
             inputWidth='140px'
