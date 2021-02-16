@@ -53,7 +53,6 @@ export default function RightNav() {
           <button className="logoutBtn" onClick={logout}>Logout</button>
           <div className="addFriendDiv">
             <h1 className="addFriendH1">Add Friend</h1>
-            {/* search bar should be here */}
             <AllUsers />
           </div>
           <div className="githubDiv">

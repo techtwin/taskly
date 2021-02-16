@@ -1,10 +1,12 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { newFriend, removeFriend } from '../redux/user';
 import '../styles/rightnav.css'
+import Search from './Search';
 export default function AllUsers() {
   const allUsers = useSelector(({ currentUser }) => currentUser.users);
   const currentUser = useSelector(({ currentUser }) => currentUser.currentUser)
+  const [searchValue, setSearchValue] = useState("")
   const dispatch = useDispatch()
 
   const addFriend = (e) => {
@@ -27,7 +29,16 @@ export default function AllUsers() {
     }
   }
 
-  const usersMap = allUsers.map(user => (
+  const searchHandler = (e) => {
+    console.log(e.target.value)
+    setSearchValue(e.target.value)
+  }
+
+  const filteredUsers = () => {
+    return allUsers.filter(user => ( user.name.toLowerCase().includes(searchValue.toLowerCase())))
+  }
+
+  const usersMap = filteredUsers().map(user => (
     <div style={{ width: "100%", marginTop: "10px" }} className="allUsersDiv" key={user.id}>
       {
         currentUser.id === user.id
@@ -58,8 +69,11 @@ export default function AllUsers() {
   ))
 
   return (
-    <div style={{ height: "400px", overflowY: "auto", paddingLeft: "10px", paddingBottom: "30px" }}>
+    <>
+      <Search searchHandler={searchHandler} searchValue={searchValue} />
+      <div style={{ height: "400px", overflowY: "auto", paddingLeft: "10px", paddingBottom: "30px" }}>
       {usersMap}
-    </div>
+      </div>
+    </>
   )
 }
