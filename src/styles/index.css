@@ -60,6 +60,8 @@ textarea {
   color: rgba(0, 0, 0, 0.87);
   border-radius: 0.28571429rem;
   box-shadow: 0 0 0 0 transparent inset;
+  height: 75px;
+  /* width: 200px; */
 }
 
 input[type="text"],
@@ -86,9 +88,8 @@ select:focus {
   outline: none;
   border: 1px solid #ffd15d;
 }
-/* #f8cf67 */
+
 .loading {
-  /* display: flex; */
   margin-top: 400px;
   margin-left: 700px;
 }

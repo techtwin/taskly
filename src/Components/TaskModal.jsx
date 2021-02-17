@@ -20,7 +20,7 @@ export default function TaskModal({ lists }) {
       <img className="addTaskBtn" onClick={show} src="./add-task.png" alt=""/>
       <Rodal
         customStyles={{ borderRadius: "20px", display: "flex" }} 
-        height={800}
+        height={830}
         width={900}
         visible={visible} 
         onClose={hide} 
