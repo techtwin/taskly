@@ -2,7 +2,6 @@ import React, { useState } from 'react'
 import { createNewTask } from '../redux/task';
 import { useDispatch } from 'react-redux'
 import Select from 'react-select'
-import chroma from 'chroma-js'
 
 export default function TaskForm({ lists, hide }) {
 
