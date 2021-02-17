@@ -10,19 +10,15 @@
   overflow-y: auto;
 }
 
-.modalSubmitBtn:focus {
+.modalSubmitBtn:focus,
+.listModalBtn:focus,
+.addTaskBtn:focus {
   outline: none;
 }
 
-.modalSubmitBtn:active {
-  transform: scale(0.95);
-}
-
-.listModalBtn:focus {
-  outline: none;
-}
-
-.listModalBtn:active {
+.modalSubmitBtn:active,
+.listModalBtn:active,
+.addTaskBtn:active {
   transform: scale(0.95);
 }
 
@@ -31,14 +27,6 @@
   cursor: pointer;
   margin-top: -40px;
   margin-left: 600px;
-}
-
-.addTaskBtn:focus {
-  outline: none;
-}
-
-.addTaskBtn:active {
-  transform: scale(0.95);
 }
 
 .cardSearch {

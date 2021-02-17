@@ -27,6 +27,14 @@
   font-weight: 800;
 }
 
+.userForms button:focus {
+  outline: none;
+}
+
+.userForms button:active {
+  transform: scale(0.95);
+}
+
 .userForms input {
   margin-top: 20px;
   margin-right: 20px;
@@ -82,7 +90,7 @@ input[type="file"] {
 }
 
 .image-upload:active {
-  transform: scale(0.9);
+  transform: scale(0.95);
 }
 
 .homepgLogo {
