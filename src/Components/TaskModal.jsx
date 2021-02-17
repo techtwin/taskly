@@ -34,7 +34,7 @@ export default function TaskModal({ lists }) {
             textAlign: "left",
             marginLeft: "20px",
             marginRight: "40px",
-            marginTop: "80px",
+            marginTop: "160px",
             borderRadius: "20px"
           }} />
         </div>
