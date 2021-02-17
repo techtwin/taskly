@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { createNewTask } from '../redux/task';
 import { useDispatch } from 'react-redux'
 import Select from 'react-select'
+import chroma from 'chroma-js'
 
 export default function TaskForm({ lists, hide }) {
 
@@ -30,11 +31,48 @@ export default function TaskForm({ lists, hide }) {
     setState({ list_id: e.value })
   }
 
+  const customStyles = {
+    control: (provided, state) => ({
+      ...provided,
+      lineHeight: "1.21428571em",
+      padding: "0.17857143em 1em",
+      fontSize: "1em",
+      background: "#fff",
+      border: state.isFocused ? "1px solid #ffd15d" : null,
+      boxShadow: state.isFocused ? "1px solid #ffd15d" : null,
+      '&:hover': {
+        border: state.isFocused ? null : null
+      },
+      color: "rgba(0, 0, 0, 0.87)",
+      borderRadius: "20px",
+    }),
+    menu: (provided) => ({
+      ...provided,
+      lineHeight: "1.21428571em",
+      overflowY: "auto",
+      height: "200px",
+      padding: "0.17857143em 1em",
+      fontSize: "1em",
+      background: "#fff",
+      border: "1px solid rgba(34, 36, 38, 0.15)",
+      color: "rgba(0, 0, 0, 0.87)",
+      borderRadius: "20px",
+      boxShadow: "0 0 0 0 transparent inset"
+    }),
+    option: (provided) => ({
+      ...provided,
+      borderRadius: "20px",
+      marginTop: "5px",
+      marginBottom: "10px",
+      paddingLeft: "20px"
+    })
+  }
+
   return (
     <div className="taskForm">
       <form onSubmit={submitHandler}>
         <h1>Choose List</h1>
-        <Select options={options} onChange={listClickHandler}/>
+        <Select styles={customStyles} classNamePrefix="reactSelect" options={options} onChange={listClickHandler}/>
         <h1>Name</h1>
         <input type="text" name="name" value={name} onChange={changeHandler} placeholder="Name"></input><br /><br />
         <h1>Date</h1>

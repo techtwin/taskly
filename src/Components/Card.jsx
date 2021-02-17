@@ -39,7 +39,7 @@ export default function Card({ lists, taskObj }) {
   }
 
   return (
-  <>
+    <>
       {
         completed ?
           <div className="card" style={{ backgroundColor: "#fddd8d"}}>
@@ -90,11 +90,20 @@ export default function Card({ lists, taskObj }) {
               <h1>{name}</h1>
               <span>{date}</span> - <span>{time}</span><br /><br />
               <div className="listTypeDiv">
-                <h2
-                  style={{ paddingTop: "5px", backgroundColor: `${list.color}` }}
-                >
-                  {list.name}
-                </h2>
+                {list.color === "black"
+                  ? 
+                    <h2
+                      style={{ paddingTop: "5px", backgroundColor: `${list.color}`, color: "white" }}
+                    >
+                      {list.name}
+                    </h2>
+                  :
+                    <h2
+                      style={{ paddingTop: "5px", backgroundColor: `${list.color}` }}
+                    >
+                      {list.name}
+                    </h2>
+                }
               </div>
               <p>{description}</p><br />
             </div>

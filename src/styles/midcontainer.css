@@ -40,3 +40,9 @@
 .addTaskBtn:active {
   transform: scale(0.95);
 }
+
+.cardSearch {
+  margin-left: 88px;
+  margin-bottom: 20px;
+  width: 590px;
+}

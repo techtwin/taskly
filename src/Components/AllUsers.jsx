@@ -72,7 +72,7 @@ export default function AllUsers({ friends }) {
 
   return (
     <>
-      <Search searchHandler={searchHandler} searchValue={searchValue} />
+      <Search friendsSearch="friendsSearch" searchHandler={searchHandler} searchValue={searchValue} />
       <div style={{ height: "400px", overflowY: "auto", paddingLeft: "10px", paddingBottom: "30px" }}>
         {usersMap}
       </div>

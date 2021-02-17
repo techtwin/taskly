@@ -51,11 +51,6 @@ input[type="color"]:focus {
   border-color: transparent;
 }
 
-input[type="text"],
-input[type="date"],
-input[type="time"],
-input[type="password"],
-select,
 textarea {
   line-height: 1.21428571em;
   padding: 0.67857143em 1em;
@@ -67,6 +62,31 @@ textarea {
   box-shadow: 0 0 0 0 transparent inset;
 }
 
+input[type="text"],
+input[type="date"],
+input[type="time"],
+input[type="password"],
+select {
+  line-height: 1.21428571em;
+  padding: 0.67857143em 1em;
+  font-size: 1em;
+  background: #fff;
+  border: 1px solid rgba(34, 36, 38, 0.15);
+  color: rgba(0, 0, 0, 0.87);
+  border-radius: 20px;
+  box-shadow: 0 0 0 0 transparent inset;
+}
+
+input[type="text"]:focus,
+input[type="date"]:focus,
+input[type="time"]:focus,
+input[type="password"]:focus,
+textarea:focus,
+select:focus {
+  outline: none;
+  border: 1px solid #ffd15d;
+}
+/* #f8cf67 */
 .loading {
   /* display: flex; */
   margin-top: 400px;

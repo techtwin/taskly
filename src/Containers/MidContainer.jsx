@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useState, useEffect } from 'react'
 import { useSelector } from 'react-redux'
 import '../styles/midcontainer.css'
 import { useDispatch } from 'react-redux'
@@ -8,6 +8,7 @@ import { fetchAllLists } from '../redux/list'
 import ListModal from '../Components/ListModal'
 import TaskModal from '../Components/TaskModal'
 import Loading from '../Components/Loading'
+import Search from '../Components/Search'
 
 export default function MidContainer() {
 
@@ -15,7 +16,7 @@ export default function MidContainer() {
   const tasks = useSelector(({ tasks }) => tasks.tasks)
   const lists = useSelector(({ lists }) => lists.lists)
   const dispatch = useDispatch()
-  // const id = currentUser.id
+  const [searchValue, setSearchValue] = useState('')
 
   console.log("Mid Cont:", tasks)
   console.log("Current user in mid cont", currentUser)
@@ -30,7 +31,16 @@ export default function MidContainer() {
     }
   }, [dispatch])
 
-  const allTasks = tasks.map(task => (
+  const searchHandler = (e) => {
+    console.log(e.target.value)
+    setSearchValue(e.target.value)
+  }
+
+  const filteredTasks = () => {
+    return tasks.filter(task => (task.name.toLowerCase().includes(searchValue.toLowerCase())))
+  }
+
+  const allTasks = filteredTasks().map(task => (
     <Card 
       lists={lists}
       key={task.id}
@@ -42,6 +52,7 @@ export default function MidContainer() {
     <div className="middleCont">
       <ListModal currentUser={currentUser}/>
       <TaskModal lists={lists} />
+      <Search cardSearch="cardSearch" searchHandler={searchHandler} searchValue={searchValue} />
       <div className="cardContainer">
         {allTasks.length === 0 ?
           <>
