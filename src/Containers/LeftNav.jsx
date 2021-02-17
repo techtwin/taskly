@@ -68,7 +68,7 @@ export default function LeftNav() {
         eventPropGetter={eventStyleGetter}
         views={['month', 'day', 'week']}
         drilldownView="week"
-        style={{ margin: "5%", height: 700, boxShadow: "15px 25px #e5e6eb5e" }}
+        style={{ marginTop: "110px", marginRight: "30px", marginLeft: "30px", height: 700, boxShadow: "15px 25px #e5e6eb5e" }}
       />
     </div>
   )
