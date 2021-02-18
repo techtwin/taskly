@@ -20,6 +20,7 @@ export default function AllUsers({ friends }) {
 
   const unFriend = (e) => {
     dispatch(removeFriend(currentUser.id, e.target.id))
+    window.location.reload()
   }
 
   const alreadyFriends = (id) => {
