@@ -11,8 +11,6 @@ function App() {
   const dispatch = useDispatch();
   const history = useHistory();
 
-  "currentUser:", currentUser;
-
   useEffect(() => {
     dispatch(getAllUsers());
     const token = localStorage.getItem("token");
