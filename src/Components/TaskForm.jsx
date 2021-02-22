@@ -31,16 +31,16 @@ export default function TaskForm({ lists, hide }) {
   }
 
   const customStyles = {
-    control: (provided, state) => ({
+    control: (provided, {isFocused}) => ({
       ...provided,
       lineHeight: "1.21428571em",
       padding: "0.17857143em 1em",
       fontSize: "1em",
       background: "#fff",
-      border: state.isFocused ? "1px solid #ffd15d" : null,
-      boxShadow: state.isFocused ? "1px solid #ffd15d" : null,
+      border: isFocused ? "1px solid #ffd15d" : null,
+      boxShadow: isFocused ? "1px solid #ffd15d" : null,
       '&:hover': {
-        border: state.isFocused ? null : null
+        border: isFocused ? null : null
       },
       color: "rgba(0, 0, 0, 0.87)",
       borderRadius: "20px",

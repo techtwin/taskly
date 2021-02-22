@@ -33,7 +33,6 @@ export const fetchAllLists = (userId) => {
           }
           return data
         })
-        // dispatch(fetchLists(data))
       })
   }
 }

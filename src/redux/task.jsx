@@ -52,7 +52,6 @@ export const fetchAllTasks = (userId) => {
           }
           return data
         })
-        // dispatch(fetchTasks(data))
       })
   }
 }
@@ -69,7 +68,6 @@ export const createNewTask = (task) => {
       .then(r => r.json())
       .then(data => {
         const action = createTask(data)
-        // dispatch(emptyArr)
         dispatch(action)
         console.log(data)
       })
