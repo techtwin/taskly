@@ -26,7 +26,6 @@ export default function TaskForm({ lists, hide }) {
   })
 
   const listClickHandler = (e) => {
-    console.log("lists click handler:", e)
     setState({ list_id: e.value })
   }
 

@@ -14,7 +14,6 @@ export default function RightNav() {
   const [friends, setFriends] = useState([])
   const currentUser = useSelector(({ currentUser }) => currentUser.currentUser)
 
-  console.log("Current user in right nav:", currentUser)
   const history = useHistory()
   const dispatch = useDispatch()
 

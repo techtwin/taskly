@@ -18,9 +18,6 @@ export default function MidContainer() {
   const dispatch = useDispatch()
   const [searchValue, setSearchValue] = useState('')
 
-  console.log("Mid Cont:", tasks)
-  console.log("Current user in mid cont", currentUser)
-
   useEffect(() => {
     if (currentUser) {
       dispatch(fetchAllLists(currentUser.id))
@@ -32,7 +29,6 @@ export default function MidContainer() {
   }, [dispatch])
 
   const searchHandler = (e) => {
-    console.log(e.target.value)
     setSearchValue(e.target.value)
   }
 

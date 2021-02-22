@@ -20,7 +20,6 @@ export default function Signup() {
   }
 
   const handlefileChange = (e) => {
-    console.log(e.target.files[0])
     const reader = new FileReader()
     reader.onload = () => {
       if (reader.readyState === 2) {

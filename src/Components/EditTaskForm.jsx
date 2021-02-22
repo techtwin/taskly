@@ -28,7 +28,6 @@ export default function EditTaskForm({ hide, lists, taskObj }) {
   })
 
   const listClickHandler = (e) => {
-    console.log("lists click handler:", e)
     setState({ list_id: e.value })
   }
   

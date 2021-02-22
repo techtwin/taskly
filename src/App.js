@@ -11,7 +11,7 @@ function App() {
   const dispatch = useDispatch();
   const history = useHistory();
 
-  console.log("currentUser:", currentUser);
+  "currentUser:", currentUser;
 
   useEffect(() => {
     dispatch(getAllUsers());

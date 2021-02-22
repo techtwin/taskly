@@ -95,15 +95,12 @@ export const signup = (userObj) => {
     })
     .then(r => r.json())
     .then(data => {
-      console.log(data)
       if (data.user && data.token) {
         const token = data.token
-        console.log("successfully created user", data.username)
         localStorage.setItem("token", token);
         const action = setCurrentUser(data.user)
         dispatch(action)
       } else {
-        console.log("user sign up failed")
         window.alert("Please enter a username and password")
       }
     })
@@ -121,7 +118,6 @@ export const editProfile = (userId, name) => {
     })
       .then(r => r.json())
       .then(updatedUser => {
-        console.log(updatedUser)
         const action = updateUser(updatedUser)
         dispatch(action)
       })
@@ -159,7 +155,6 @@ export const newFriend = (friendObj) => {
     })
       .then(r => r.json())
       .then(newFriend => {
-        console.log("new friend:", newFriend.friendrequest.receiver)
         dispatch(addFriend(newFriend.friendrequest.receiver))
     })
   }

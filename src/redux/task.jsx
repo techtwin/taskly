@@ -42,11 +42,8 @@ export const fetchAllTasks = (userId) => {
     fetch(`${url}tasks`)
     .then(r => r.json())
       .then(data => {
-        console.log(data)
-
         dispatch(emptyArr)
         data.map(task => {
-          console.log("task in map action:", task.list.user.id)
           if (task.list.user.id === userId) {
             return dispatch(fetchTasks(task))
           }
@@ -69,7 +66,6 @@ export const createNewTask = (task) => {
       .then(data => {
         const action = createTask(data)
         dispatch(action)
-        console.log(data)
       })
   }
 }
@@ -87,7 +83,6 @@ export const editTask = (taskId, taskObj) => {
       .then(data => {
         const action = updateTask(data)
         dispatch(action)
-        console.log("Updated task:", data)
     })
   }
 }
@@ -114,7 +109,6 @@ export const toggleCompleted = (taskId, completed) => {
       .then(data => {
         const action = toggleTask(data)
         dispatch(action)
-        console.log("toggling in task action:", data)
       })
   }
 }

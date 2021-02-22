@@ -27,7 +27,6 @@ export const fetchAllLists = (userId) => {
 
         dispatch(emptyArr)
         data.map(list => {
-          console.log("list in map action:", list)
           if (list.user.id === userId) {
             return dispatch(fetchLists(list))
           }
@@ -54,7 +53,6 @@ export const createNewList = (userId, name, color) => {
       .then(data => {
         const action = createList(data)
         dispatch(action)
-        console.log("List in action newList:", data)
       })
   }
 }

@@ -7,7 +7,6 @@ export default function ProfileModal() {
   const [visible, setVisible] = useState(false)
 
   const show = () => {
-    console.log("showing profile modal")
     setVisible(true)
   }
 

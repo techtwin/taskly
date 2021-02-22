@@ -33,7 +33,6 @@ export default function AllUsers({ friends }) {
   }
 
   const searchHandler = (e) => {
-    console.log(e.target.value)
     setSearchValue(e.target.value)
   }
 
