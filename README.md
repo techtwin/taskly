@@ -1,7 +1,8 @@
 # taskly.
 taskly is an app made for task management. It also has features for team collaboration by enabling a user to add a friend/team member to one of their task(s) and completing them together. 
-  
-![](https://media.giphy.com/media/PDkjIPdeCoaxZmagH1/giphy.gif)
+
+## Demo 
+<img src="https://media.giphy.com/media/PDkjIPdeCoaxZmagH1/giphy.gif" width="800" height="500" />
 
 ## Tech Stack
 The front end uses React and Redux for managing state. The back end uses Ruby on Rails as an API. Visit it [here](https://github.com/techtwins/taskly-backend).
