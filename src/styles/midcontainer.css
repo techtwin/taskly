@@ -1,13 +1,62 @@
 .main {
   display: grid;
   grid-template-columns: repeat(3, 1fr) repeat(2, 0fr);
-  /* grid-column-gap: 0px; */
-  /* grid-row-gap: 0px; */
+  /* grid-column-gap: 0px;
+  grid-row-gap: 0px; */
 }
 
 .cardContainer {
-  height: 810px;
+  height: 780px;
   overflow-y: auto;
+}
+
+.list-img {
+  object-fit: contain;
+  width: 300px;
+  text-align: left;
+  margin-left: 20px;
+  margin-right: 40px;
+  margin-top: 50px;
+  border-radius: 20px;
+}
+
+.task-img,
+.taskEdit-img {
+  object-fit: contain;
+  width: 420px;
+  text-align: left;
+  margin-left: 20px;
+  margin-right: 40px;
+  margin-top: 160px;
+  border-radius: 20px;
+}
+
+.listModalBtn {
+  cursor: pointer;
+  color: #fff;
+  background-color: #000;
+  display: inline-block;
+  border-radius: 20px;
+  border: none;
+  margin-left: 220px;
+  margin-bottom: 50px;
+  padding: 10px;
+  width: 200px;
+  font-size: 20px;
+  font-weight: 900;
+}
+
+.modalSubmitBtn {
+  cursor: pointer;
+  color: #fff;
+  background-color: #f8d57e;
+  border-radius: 20px;
+  border: none;
+  margin-top: 20px;
+  padding: 10px;
+  width: 200px;
+  font-size: 20px;
+  font-weight: 800;
 }
 
 .modalSubmitBtn:focus,
@@ -32,5 +81,5 @@
 .cardSearch {
   margin-left: 88px;
   margin-bottom: 20px;
-  width: 590px;
+  width: 630px;
 }

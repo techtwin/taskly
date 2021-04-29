@@ -61,6 +61,7 @@ input[type="checkbox"] {
   margin-bottom: 15px;
   border-radius: 80px;
   text-align: center;
+  height: 78px;
 }
 
 .listTypeDiv h2 {
@@ -72,5 +73,4 @@ input[type="checkbox"] {
   padding: 2px 20px 10px;
   border-radius: 20px;
   position: relative;
-  height: 15px;
 }

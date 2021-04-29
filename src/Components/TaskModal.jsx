@@ -20,23 +20,15 @@ export default function TaskModal({ lists }) {
       <img className="addTaskBtn" onClick={show} src="./add-task.png" alt=""/>
       <Rodal
         customStyles={{ borderRadius: "20px", display: "flex" }} 
-        height={830}
+        height={850}
         width={900}
         visible={visible} 
         onClose={hide} 
         animation="zoom" 
         showCloseButton={false}
       >
-        <div className="list-img">
-          <img src="./Task.jpg" alt="task pic" style={{
-            objectFit: "contain",
-            width: "420px",
-            textAlign: "left",
-            marginLeft: "20px",
-            marginRight: "40px",
-            marginTop: "160px",
-            borderRadius: "20px"
-          }} />
+        <div>
+          <img className="task-img" src="./Task.jpg" alt="task pic" />
         </div>
         <TaskForm hide={hide} lists={lists} />
       </Rodal>

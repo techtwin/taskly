@@ -18,45 +18,20 @@ export default function ListModal({ currentUser }) {
   return (
     <>
       <h1 style={{ display: "inline-block", marginLeft: "100px", fontWeight: 600 }}>Your Agenda</h1>
-      <button
-        className="listModalBtn"
-        style={{
-          cursor: "pointer",
-          color: "white",
-          backgroundColor: "black",
-          display: "inline-block",
-          borderRadius: "20px",
-          border: "none",
-          marginLeft: "220px",
-          marginBottom: "50px",
-          padding: "10px",
-          width: "200px",
-          fontSize: "20px",
-          fontWeight: 900
-        }}
-        onClick={show}
-      >
+      <button className="listModalBtn" onClick={show}>
         New List
       </button>
       <Rodal
         customStyles={{ borderRadius: "20px", display: "flex" }} 
-        height={340}
+        height={380}
         width={650}
         visible={visible} 
         onClose={hide} 
         animation="zoom" 
         showCloseButton={false}
       >
-        <div className="list-img">
-          <img src="./list-img.jpg" alt="list pic" style={{
-            objectFit: "contain",
-            width: "300px",
-            textAlign: "left",
-            marginLeft: "20px",
-            marginRight: "40px",
-            marginTop: "50px",
-            borderRadius: "20px"
-          }} />
+        <div>
+          <img className="list-img" src="./list-img.jpg" alt="list pic" />
         </div>
         <ListForm currentUser={currentUser} hide={hide} />
       </Rodal>

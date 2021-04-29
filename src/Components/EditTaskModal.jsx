@@ -30,23 +30,15 @@ export default function EditTaskModal({ taskObj, lists }) {
       </button>
       <Rodal
         customStyles={{ borderRadius: "20px", display: "flex" }} 
-        height={800}
+        height={850}
         width={900}
         visible={visible} 
         onClose={hide} 
         animation="zoom" 
         showCloseButton={false}
       >
-        <div className="list-img">
-          <img src="./Task.jpg" alt="task pic" style={{
-            objectFit: "contain",
-            width: "420px",
-            textAlign: "left",
-            marginLeft: "20px",
-            marginRight: "40px",
-            marginTop: "80px",
-            borderRadius: "20px"
-          }} />
+        <div>
+          <img className="taskEdit-img" src="./Task.jpg" alt="task pic" />
         </div>
         <EditTaskForm taskObj={taskObj} hide={hide} lists={lists} />
       </Rodal>

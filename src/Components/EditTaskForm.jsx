@@ -30,12 +30,48 @@ export default function EditTaskForm({ hide, lists, taskObj }) {
   const listClickHandler = (e) => {
     setState({ list_id: e.value })
   }
-  
+  const customStyles = {
+    control: (provided, {isFocused}) => ({
+      ...provided,
+      lineHeight: "1.21428571em",
+      padding: "0.17857143em 1em",
+      fontSize: "1em",
+      background: "#fff",
+      border: isFocused ? "1px solid #ffd15d" : null,
+      boxShadow: isFocused ? "1px solid #ffd15d" : null,
+      '&:hover': {
+        border: isFocused ? null : null
+      },
+      color: "rgba(0, 0, 0, 0.87)",
+      borderRadius: "20px",
+    }),
+    menu: (provided) => ({
+      ...provided,
+      lineHeight: "1.21428571em",
+      overflowY: "auto",
+      height: "200px",
+      padding: "0.17857143em 1em",
+      fontSize: "1em",
+      background: "#fff",
+      border: "1px solid rgba(34, 36, 38, 0.15)",
+      color: "rgba(0, 0, 0, 0.87)",
+      borderRadius: "20px",
+      boxShadow: "0 0 0 0 transparent inset"
+    }),
+    option: (provided) => ({
+      ...provided,
+      borderRadius: "20px",
+      marginTop: "5px",
+      marginBottom: "10px",
+      paddingLeft: "20px"
+    })
+  }
+
   return (
     <div className="taskForm">
       <form onSubmit={submitHandler}>
         <h1>Choose List</h1>
-        <Select options={options} onChange={listClickHandler}/>
+        <Select styles={customStyles} options={options} onChange={listClickHandler}/>
         <h1>Name</h1>
         <input type="text" name="name" value={state.name} onChange={changeHandler} placeholder="Name"></input><br /><br />
         <h1>Date</h1>
@@ -46,19 +82,9 @@ export default function EditTaskForm({ hide, lists, taskObj }) {
         <textarea type="text" name="description" value={state.description} onChange={changeHandler} placeholder="Description"></textarea><br /><br />
         <button
           onClick={hide}
-          className="modalSubmitBtn"
-          style={{
-          cursor: "pointer",
-          color: "white",
-          backgroundColor: "#F8D57E",
-          borderRadius: "20px",
-          border: "none",
-          marginTop: "10px",
-          padding: "10px",
-          width: "200px",
-          fontSize: "20px",
-          fontWeight: 800
-        }}>Submit</button>
+          className="modalSubmitBtn">
+          Submit
+        </button>
       </form>
     </div>
   )

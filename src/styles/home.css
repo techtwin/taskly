@@ -11,7 +11,9 @@
   box-shadow: 25px 30px #e5e6eb5e;
   border-radius: 20px;
   padding: 60px;
-  width: 800px;
+  width: 910px;
+  /* width: 100vw;
+  height: 100vh; */
 }
 
 .userForms button {
