@@ -5,7 +5,7 @@ import '../styles/home.css'
 
 export default function Home() {
   return (
-    <>
+    <div className="formDiv">
       <div className="userForms">
         <img className="homepgLogo" src="./Logo.png" alt="logo img"/>
         <Login />
@@ -14,6 +14,6 @@ export default function Home() {
         </div>
         <Signup />
       </div>
-    </>
+    </div>
   )
 }

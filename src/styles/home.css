@@ -1,17 +1,17 @@
-.userForms {
+.formDiv {
   position: fixed;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  /* display: flex; */
+}
+
+.userForms {
   text-align: center;
-  align-self: center;
-  margin: 0 auto;
   background-color: #f6f7fb93;
   box-shadow: 25px 30px #e5e6eb5e;
   border-radius: 20px;
   padding: 60px;
-  width: 1400px;
+  width: 800px;
 }
 
 .userForms button {
